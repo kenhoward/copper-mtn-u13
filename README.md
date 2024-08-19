@@ -1,3 +1,25 @@
+# U13 Copper Mountain
+
+## Folder Structure (WIP)
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── matches/
+│   │   └── page.tsx
+│   ├── table/
+│   │   └── page.tsx
+│   ├── stats/
+│   │   └── page.tsx
+├── components/
+│   ├── Layout.tsx
+│   ├── Navbar.tsx
+│   └── Logo.tsx
+├── styles/
+│   └── globals.css
+└── types/
+    └── index.ts
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
