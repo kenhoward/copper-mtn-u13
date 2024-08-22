@@ -75,7 +75,7 @@
 
 :root[data-theme="light"] {
     --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
+    --background-start-rgb: 255, 255, 255;
     --background-end-rgb: 255, 255, 255;
 }
 
@@ -146,6 +146,14 @@ a {
     padding: 0 20px;
     display: flex;
     align-items: center;
+}
+
+.toggleWrapper > span {
+    padding-right: 10px;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 
 #dn { display: none;}
