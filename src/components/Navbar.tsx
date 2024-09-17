@@ -10,22 +10,22 @@ const Navbar = () => {
                 <ul>
                     <li>
                         <Link href="/">
-                            Home
+                            HOME
                         </Link>
                     </li>
                     <li>
                         <Link href="/matches">
-                            Matches
+                            MATCHES
                         </Link>
                     </li>
                     <li>
                         <Link href="/table">
-                            Table
+                            TABLE
                         </Link>
                     </li>
                     <li>
                         <Link href="/stats">
-                            Stats
+                            STATS
                         </Link>
                     </li>
                 </ul>
