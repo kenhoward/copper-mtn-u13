@@ -20,7 +20,7 @@ const ThemeToggle = () => {
     return (
         <div className="toggleWrapper">
             {/* I may want to rethink this lightswitch - looks awkward */}
-            <span>{lightSwitch}</span>
+            <span>{lightSwitch} MODE</span>
             <input type="checkbox" className="dn" id="dn" checked={darkMode} onChange={toggleTheme} />
             <label htmlFor="dn" className="toggle">
                 <span className="toggle__handler">
