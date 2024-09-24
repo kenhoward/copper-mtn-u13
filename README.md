@@ -1,24 +1,30 @@
 # U13 Copper Mountain
 
 ## Folder Structure (WIP)
-src/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── matches/
+├── src/
+│   ├── app/
+│   │   ├── matches/
+│   │   │   └── page.tsx
+│   │   ├── stats/
+│   │   │   └── page.tsx
+│   │   ├── table/
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── layout.tsx
 │   │   └── page.tsx
-│   ├── table/
-│   │   └── page.tsx
-│   ├── stats/
-│   │   └── page.tsx
-├── components/
-│   ├── Layout.tsx
-│   ├── Navbar.tsx
-│   └── Logo.tsx
-├── styles/
-│   └── globals.css
-└── types/
-    └── index.ts
+│   ├── components/
+│   │   ├── Layout.tsx
+│   │   ├── Layout.module.scss
+│   │   ├── Logo.tsx
+│   │   ├── Logo.module.scss
+│   │   ├── Navbar.tsx
+│   │   ├── Navbar.module.scss
+│   │   ├── ThemeToggle.tsx
+│   │   └── ThemeToggle.module.scss
+│   ├── styles/
+│   │   └── globals.scss
+│   └── types/
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -27,13 +33,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
