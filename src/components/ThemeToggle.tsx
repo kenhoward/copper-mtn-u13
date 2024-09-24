@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import styles from './ThemeToggle.module.scss';
 
 const ThemeToggle = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -15,25 +16,32 @@ const ThemeToggle = () => {
     const toggleTheme = () => {
         setDarkMode(!darkMode);
     };
-    const lightSwitch = darkMode ? 'NIGHT' : 'DAY'
+
+    const lightSwitch = darkMode ? 'NIGHT' : 'DAY';
 
     return (
-        <div className="toggleWrapper">
+        <div className={styles.toggleWrapper}>
             {/* I may want to rethink this lightswitch - looks awkward */}
             <span>{lightSwitch} MODE</span>
-            <input type="checkbox" className="dn" id="dn" checked={darkMode} onChange={toggleTheme} />
-            <label htmlFor="dn" className="toggle">
-                <span className="toggle__handler">
-                    <span className="crater crater--1"></span>
-                    <span className="crater crater--2"></span>
-                    <span className="crater crater--3"></span>
+            <input
+                type="checkbox"
+                className={styles.dn} 
+                id="dn"
+                checked={darkMode}
+                onChange={toggleTheme}
+            />
+            <label htmlFor="dn" className={styles.toggle}>
+                <span className={styles.toggle__handler}>
+                    <span className={`${styles.crater} ${styles['crater--1']}`}></span>
+                    <span className={`${styles.crater} ${styles['crater--2']}`}></span>
+                    <span className={`${styles.crater} ${styles['crater--3']}`}></span>
                 </span>
-                <span className="star star--1"></span>
-                <span className="star star--2"></span>
-                <span className="star star--3"></span>
-                <span className="star star--4"></span>
-                <span className="star star--5"></span>
-                <span className="star star--6"></span>
+                <span className={`${styles.star} ${styles['star--1']}`}></span>
+                <span className={`${styles.star} ${styles['star--2']}`}></span>
+                <span className={`${styles.star} ${styles['star--3']}`}></span>
+                <span className={`${styles.star} ${styles['star--4']}`}></span>
+                <span className={`${styles.star} ${styles['star--5']}`}></span>
+                <span className={`${styles.star} ${styles['star--6']}`}></span>
             </label>
         </div>
     );
