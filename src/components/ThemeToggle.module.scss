@@ -13,6 +13,12 @@
     }
 }
 
+.lightSwitch {
+    display: flex;
+    justify-content: center;
+    min-width: 115px;
+}
+
 .dn {
     display: none;
 }
