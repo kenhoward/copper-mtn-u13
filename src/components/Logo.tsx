@@ -2,13 +2,19 @@ import Link from 'next/link';
 
 const Logo = () => {
     return (
-        <div className="logo">
+        <div className="logo" style={{ transition: 'all 0.4s ease-in-out' }}>
             <Link href="/">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                    width="43.33pt" height="50pt" viewBox="0 0 195 225"
-                    preserveAspectRatio="xMidYMid meet">
+                <svg
+                    version="1.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="86.66pt"
+                    height="100pt"
+                    viewBox="0 0 195 225"
+                    preserveAspectRatio="xMidYMid meet"
+                    style={{ transition: 'all 0.4s ease-in-out' }}
+                >
                     <g transform="translate(0.000000,225.000000) scale(0.100000,-0.100000)"
-                        fill="#FFFFFF" stroke="none">
+                        fill="#000" stroke="none">
                         <path d="M332 1402 l3 -498 38 -76 c42 -86 142 -195 238 -261 48 -33 58 -45
                             73 -92 10 -33 33 -72 61 -103 110 -122 286 -132 407 -24 48 44 98 126 98 163
                             0 8 28 35 63 59 129 91 219 197 260 307 21 56 22 73 25 541 l3 482 -636 0
