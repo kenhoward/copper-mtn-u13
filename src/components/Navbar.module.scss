@@ -21,9 +21,11 @@
         }
 
         .logoContainer {
-            transition: width 0.4s ease-in-out;
-            transform: translateY(1px) scale(.6);
+            display: flex;
+            transform: translateY(-25px) scale(0.6);
+            transform-origin: center bottom;
             margin-bottom: 0;
+            transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out;
         }
     }
 }
@@ -70,8 +72,11 @@
     margin: 0 auto;
 
     .logoContainer {
+        display: flex;
         margin-bottom: 45px;
-        transition: width 0.4s ease-in-out;
+        transform: translateY(0) scale(1);
+        transform-origin: center bottom;
+        transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out;
     }
 
     .navLinks {
