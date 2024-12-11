@@ -21,7 +21,6 @@ const ThemeToggle = () => {
 
     return (
         <div className={styles.toggleWrapper}>
-            {/* I may want to rethink this lightswitch - looks awkward */}
             <span className={styles.lightSwitch}>{lightSwitch} MODE</span>
             <input
                 type="checkbox"
