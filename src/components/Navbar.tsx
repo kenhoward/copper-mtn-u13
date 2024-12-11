@@ -28,7 +28,8 @@ const Navbar = () => {
             {/* Top Section */}
             {!isSticky && (
                 <div className={styles.topSection}>
-                    <div className={styles.siteName}>CMS U13 WM</div>
+                    {/* <div className={styles.siteName}>CMS U13 WM</div> */}
+                    <div className={styles.siteName}></div>
                     <div className={styles.topLinks}>
                         <a href="#">Member Services</a>
                         <a href="#">Social 1</a>

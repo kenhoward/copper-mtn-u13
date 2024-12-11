@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #FFF;
+    background-color: #dcdde1;
     transition: all 0.4s ease-in-out;
 
     &.sticky {
@@ -35,7 +35,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: linear-gradient(135deg, transparent 28.35%, #444444 25%);
+    // background: linear-gradient(135deg, transparent 28.35%, #444444 25%);
+    background-color: #f5f6fa;
     color: #fff;
     transition: all 0.4s ease-in-out;
 
@@ -46,7 +47,7 @@
 
     .topLinks {
         a {
-            color: #fff;
+            color: #2d3436;
             margin-left: 1rem;
             text-decoration: none;
         }
@@ -54,7 +55,8 @@
 }
 
 .navbar {
-    background: linear-gradient(135deg, transparent 25%, #333333 25%);
+    background: linear-gradient(135deg, transparent 25%, #0984E3 25%);
+    background-color: #f5f6fa;
     padding: 0px 20px;
     transition: padding 0.4s ease-in-out;
 
