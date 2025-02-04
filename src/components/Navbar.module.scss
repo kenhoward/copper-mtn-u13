@@ -1,7 +1,6 @@
 @import 'src/styles/colors.scss';
 
 .navBarContainer {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
@@ -38,11 +37,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    // position: relative;
-    // top: 0;
-    // left: 0;
-    // z-index: 1000;
-    background-color: #dcdde1;
+    background: linear-gradient(to right, $headerBgColor 50%, $topNavBgColor 50%);
     transition: all 0.4s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
@@ -51,13 +46,6 @@
         top: 0;
         width: 100%;
         padding: 0;
-
-        .topSection {
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
-            pointer-events: none;
-            height: 0;
-        }
 
         .logoContainer {
             display: flex;
@@ -69,7 +57,7 @@
     }
 }
 
-.headerContainer {
+.headerContainerTEMP {
     border: 1px solid blue;
     display: flex;
     flex-direction: column;

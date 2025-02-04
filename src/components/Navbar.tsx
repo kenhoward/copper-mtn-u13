@@ -40,7 +40,7 @@ const Navbar = () => {
                 </div>
             )}
             <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
-                <div className={styles.headerContainer} >
+                <div className={styles.headerContainerTEMP} >
                     <nav className={styles.navbar}>
                         <div className={styles.navContainer}>
                             <div className={styles.logoContainer}>
