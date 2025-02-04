@@ -24,44 +24,48 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
-            {/* Top Section */}
+        <div className={styles.navBarContainer}>
             {!isSticky && (
                 <div className={styles.topSection}>
-                    {/* <div className={styles.siteName}>CMS U13 WM</div> */}
-                    <div className={styles.siteName}></div>
-                    <div className={styles.topLinks}>
+                    <div className={styles.linksContainer}>
                         <a href="#">Member Services</a>
                         <a href="#">Social 1</a>
                         <a href="#">Social 2</a>
+                        {/* <div className={styles.topLinks}>
+                            <a href="#">Member Services</a>
+                            <a href="#">Social 1</a>
+                            <a href="#">Social 2</a>
+                        </div> */}
                     </div>
                 </div>
             )}
-
-            {/* Navbar Section */}
-            <nav className={styles.navbar}>
-                <div className={styles.navContainer}>
-                    <div className={styles.logoContainer}>
-                        <Logo />
-                    </div>
-                    <ul className={styles.navLinks}>
-                        <li>
-                            <Link href="/">HOME</Link>
-                        </li>
-                        <li>
-                            <Link href="/matches">MATCHES</Link>
-                        </li>
-                        <li>
-                            <Link href="/table">TABLE</Link>
-                        </li>
-                        <li>
-                            <Link href="/stats">STATS</Link>
-                        </li>
-                    </ul>
-                    <ThemeToggle />
+            <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
+                <div className={styles.headerContainer} >
+                    <nav className={styles.navbar}>
+                        <div className={styles.navContainer}>
+                            <div className={styles.logoContainer}>
+                                <Logo />
+                            </div>
+                            <ul className={styles.navLinks}>
+                                <li>
+                                    <Link href="/">HOME</Link>
+                                </li>
+                                <li>
+                                    <Link href="/matches">MATCHES</Link>
+                                </li>
+                                <li>
+                                    <Link href="/table">TABLE</Link>
+                                </li>
+                                <li>
+                                    <Link href="/stats">STATS</Link>
+                                </li>
+                            </ul>
+                            <ThemeToggle />
+                        </div>
+                    </nav>
                 </div>
-            </nav>
-        </header>
+            </header>
+        </div>
     );
 };
 

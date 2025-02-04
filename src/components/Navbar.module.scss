@@ -1,13 +1,50 @@
 @import 'src/styles/colors.scss';
 
-.header {
+.navBarContainer {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    padding: 10px 20px;
+    background-color: $headerBgColor;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+
+    .siteName {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: end;
+    margin: 0 auto;
+    width: 1200px;
+
+    a {
+        color: #2d3436;
+        margin: 0 10px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    // position: relative;
+    // top: 0;
+    // left: 0;
+    // z-index: 1000;
     background-color: #dcdde1;
     transition: all 0.4s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
     &.sticky {
         position: fixed;
@@ -32,27 +69,11 @@
     }
 }
 
-.topSection {
+.headerContainer {
+    border: 1px solid blue;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: $headerBgColor;
-    color: #fff;
-    transition: all 0.4s ease-in-out;
-
-    .siteName {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    .topLinks {
-        a {
-            color: #2d3436;
-            margin-left: 1rem;
-            text-decoration: none;
-        }
-    }
+    flex-direction: column;
+    width: 1200px;
 }
 
 .navbar {
@@ -74,18 +95,34 @@
     max-width: 1400px;
     margin: 0 auto;
 
-    .logoContainer {
-        display: flex;
-        margin-bottom: 45px;
-        transform: translateY(0) scale(1);
-        transform-origin: center bottom;
-        transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out;
-    }
+    // .logoContainer {
+    //     display: flex;
+    //     margin-bottom: 45px;
+    //     transform: translateY(0) scale(1);
+    //     transform-origin: center bottom;
+    //     transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out;
+    // }
+
+    // .logoContainer {
+    //     display: flex;
+    //     align-items: center;
+    //     position: relative;
+    //     top: -10px;
+    //     margin-bottom: 0;
+    //     transform: scale(1);
+    //     transform-origin: center bottom;
+    //     transition: transform 0.4s ease-in-out, top 0.4s ease-in-out;
+    // }
 
     .navLinks {
+        // display: flex;
+        // list-style: none;
+        // gap: 2rem;
         display: flex;
         list-style: none;
         gap: 1.5rem;
+        position: relative;
+        left: -10px;
 
         li {
             transition: transform 0.4s ease-in-out;
