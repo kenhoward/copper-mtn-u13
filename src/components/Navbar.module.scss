@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 
-.topSection {
+.topSectionContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +25,7 @@
     display: flex;
     justify-content: end;
     margin: 0 auto;
-    width: 1200px;
+    width: var(--header-max-width);
 
     a {
         color: #2d3436;
@@ -33,7 +33,7 @@
     }
 }
 
-.header {
+.lowerSectionContainer {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -41,14 +41,24 @@
     transition: all 0.4s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
+    .logo {
+        position: relative;
+        left: 80px;
+        bottom: 20px;
+
+        @media screen and (max-width: 900px) {
+            left: 0;
+        }
+    }
+
     &.sticky {
         position: fixed;
         top: 0;
         width: 100%;
         padding: 0;
 
-        .logoContainer {
-            display: flex;
+        .logo {
+            bottom: 0;
             transform: translateY(-25px) scale(0.6);
             transform-origin: center bottom;
             margin-bottom: 0;
@@ -57,14 +67,13 @@
     }
 }
 
-.headerContainerTEMP {
-    border: 1px solid blue;
+.headerContainer {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: var(--header-max-width);
 }
 
-.navbar {
+.navbarSection {
     background: linear-gradient(135deg, transparent 25%, $topNavBgColor 25%);
     background-color: $headerBgColor;
     padding: 0px 20px;
@@ -75,42 +84,19 @@
     }
 }
 
-.navContainer {
+.navLinksContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    max-width: 1400px;
     margin: 0 auto;
 
-    // .logoContainer {
-    //     display: flex;
-    //     margin-bottom: 45px;
-    //     transform: translateY(0) scale(1);
-    //     transform-origin: center bottom;
-    //     transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out;
-    // }
-
-    // .logoContainer {
-    //     display: flex;
-    //     align-items: center;
-    //     position: relative;
-    //     top: -10px;
-    //     margin-bottom: 0;
-    //     transform: scale(1);
-    //     transform-origin: center bottom;
-    //     transition: transform 0.4s ease-in-out, top 0.4s ease-in-out;
-    // }
-
     .navLinks {
-        // display: flex;
-        // list-style: none;
-        // gap: 2rem;
         display: flex;
         list-style: none;
-        gap: 1.5rem;
-        position: relative;
-        left: -10px;
+        gap: 2rem;
+        display: flex;
+        list-style: none;
 
         li {
             transition: transform 0.4s ease-in-out;

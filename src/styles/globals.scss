@@ -1,5 +1,6 @@
 :root {
-    --max-width: 1400px;
+    --header-max-width: 1000px;
+    // TODO - mobile breakpoint good around 530px
     --border-radius: 12px;
     --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
@@ -103,25 +104,4 @@ a {
     html {
         color-scheme: dark;
     }
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    height: 70px;
-    background-color: #333;
-    color: #fff;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
 }

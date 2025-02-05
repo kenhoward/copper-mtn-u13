@@ -26,24 +26,19 @@ const Navbar = () => {
     return (
         <div className={styles.navBarContainer}>
             {!isSticky && (
-                <div className={styles.topSection}>
+                <div className={styles.topSectionContainer}>
                     <div className={styles.linksContainer}>
                         <a href="#">Member Services</a>
                         <a href="#">Social 1</a>
                         <a href="#">Social 2</a>
-                        {/* <div className={styles.topLinks}>
-                            <a href="#">Member Services</a>
-                            <a href="#">Social 1</a>
-                            <a href="#">Social 2</a>
-                        </div> */}
                     </div>
                 </div>
             )}
-            <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
-                <div className={styles.headerContainerTEMP} >
-                    <nav className={styles.navbar}>
-                        <div className={styles.navContainer}>
-                            <div className={styles.logoContainer}>
+            <div className={`${styles.lowerSectionContainer} ${isSticky ? styles.sticky : ''}`}>
+                <div className={styles.headerContainer} >
+                    <nav className={styles.navbarSection}>
+                        <div className={styles.navLinksContainer}>
+                            <div className={styles.logo}>
                                 <Logo />
                             </div>
                             <ul className={styles.navLinks}>
@@ -64,7 +59,7 @@ const Navbar = () => {
                         </div>
                     </nav>
                 </div>
-            </header>
+            </div>
         </div>
     );
 };
