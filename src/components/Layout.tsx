@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 // components
 import Navbar from './Navbar';
-import MobileNavbar from './MobileNavbar';
+import MobileNavbar from './MobileNavBar';
 
 const Layout = ({ children }: { children: ReactNode }) => {
     const { isMobile } = useGlobal();
