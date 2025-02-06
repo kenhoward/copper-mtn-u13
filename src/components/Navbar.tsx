@@ -1,27 +1,13 @@
-"use client"
-import { useState, useEffect } from 'react';
+// src/components/Navbar.tsx
+"use client";
 import Link from 'next/link';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+import { useGlobal } from '../context/GlobalContext';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
-    const [isSticky, setIsSticky] = useState(false);
-
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    const { isSticky } = useGlobal();
 
     return (
         <div className={styles.navBarContainer}>
@@ -35,7 +21,7 @@ const Navbar = () => {
                 </div>
             )}
             <div className={`${styles.lowerSectionContainer} ${isSticky ? styles.sticky : ''}`}>
-                <div className={styles.headerContainer} >
+                <div className={styles.headerContainer}>
                     <nav className={styles.navbarSection}>
                         <div className={styles.navLinksContainer}>
                             <div className={styles.logo}>

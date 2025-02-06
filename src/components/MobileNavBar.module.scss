@@ -1,0 +1,23 @@
+// src/components/MobileNavbar.module.scss
+@import 'src/styles/colors.scss';
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    height: 70px;
+    background-color: #333;
+    color: #fff;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
