@@ -1,9 +1,12 @@
 // src/components/Navbar.tsx
 "use client";
 import Link from 'next/link';
+// context
+import { useGlobal } from '../context/GlobalContext';
+// components
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
-import { useGlobal } from '../context/GlobalContext';
+// styles
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {

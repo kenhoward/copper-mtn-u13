@@ -1,14 +1,19 @@
 import Link from 'next/link';
+// context
+import { useGlobal } from '../context/GlobalContext';
+// components
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+// styles
 import styles from './MobileNavbar.module.scss';
 
 const MobileNavbar = () => {
+    const { isSticky } = useGlobal();
 
     return (
         <nav>
-            <div className={styles.navContainer}>
-                <Logo />
+            <div className={`${styles.linksContainer} ${isSticky ? styles.sticky : ''}`}>
+                <Logo mobile />
                 <ul>
                     <li>
                         <Link href="/">HOME</Link>

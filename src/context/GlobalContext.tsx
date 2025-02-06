@@ -1,4 +1,3 @@
-// src/context/GlobalContext.tsx
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
@@ -12,14 +11,14 @@ const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     const [isSticky, setIsSticky] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    // * Note to self: if the header needs a dynamic scrollY reference, plan accordingly
-    const magicScrollNumber = 40;
     // TODO probably ought to offload to some config
     const magicIsMobileNumber = 600;
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsSticky(window.scrollY > magicScrollNumber);
+            // TODO make more dynamic off the header height
+            const scrollThreshold = isMobile ? 70 : 40;
+            setIsSticky(window.scrollY > scrollThreshold);
         };
 
         window.addEventListener('scroll', handleScroll);

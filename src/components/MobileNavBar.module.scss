@@ -1,14 +1,14 @@
-// src/components/MobileNavbar.module.scss
 @import 'src/styles/colors.scss';
 
-.navContainer {
+.linksContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
     height: 70px;
-    background-color: #333;
+    background-color: $topNavBgColor;
     color: #fff;
+    transition: all 0.4s ease-in-out;
 
     ul {
         list-style-type: none;
@@ -20,4 +20,12 @@
         color: #fff;
         text-decoration: none;
     }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 5px 20px;
 }
