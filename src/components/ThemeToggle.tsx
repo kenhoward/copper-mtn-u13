@@ -17,12 +17,8 @@ const ThemeToggle = () => {
         setDarkMode(!darkMode);
     };
 
-    const lightSwitch = darkMode ? 'NIGHT' : 'DAY';
-
     return (
         <div className={styles.toggleWrapper}>
-            {/* I may want to rethink this lightswitch - looks awkward */}
-            <span>{lightSwitch} MODE</span>
             <input
                 type="checkbox"
                 className={styles.dn} 
