@@ -11,7 +11,6 @@ import styles from './Navbar.module.scss';
 
 const Navbar = () => {
     const { isSticky } = useGlobal();
-    console.log('isSticky', isSticky);
 
     return (
         <div className={styles.navBarContainer}>

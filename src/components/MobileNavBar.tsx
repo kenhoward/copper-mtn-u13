@@ -5,7 +5,7 @@ import { useGlobal } from '../context/GlobalContext';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
 // styles
-import styles from './MobileNavbar.module.scss';
+import styles from './MobileNavBar.module.scss';
 
 const MobileNavbar = () => {
     const { isSticky } = useGlobal();
