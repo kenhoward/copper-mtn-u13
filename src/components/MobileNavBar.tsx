@@ -28,7 +28,6 @@ const MobileNavbar = () => {
                         <Link href="/stats">STATS</Link>
                     </li>
                 </ul>
-                <ThemeToggle />
             </div>
         </nav>
     );

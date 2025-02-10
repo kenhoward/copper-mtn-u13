@@ -1,0 +1,53 @@
+.landing {
+    color: var(--dark-grey); // TODO update
+    
+    h1 {
+        margin-bottom: 25px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-height: 55em;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 60em;
+    background: url('https://res.cloudinary.com/dqlpq0s6t/image/upload/v1739209745/u13-soccer/vikram-tkv-JO19K0HDDXI-unsplash_lo9cpu.jpg') no-repeat center center/cover;
+    padding: 4rem 2rem;
+
+    @media screen and (max-width: 768px) {
+        max-height: 50em;
+    }
+}
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 175px;
+    min-width: 400px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.nextMatch {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.moreInfo {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.moreInfo:hover {
+    text-decoration: underline;
+}
