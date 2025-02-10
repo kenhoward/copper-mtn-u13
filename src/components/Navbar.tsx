@@ -17,9 +17,7 @@ const Navbar = () => {
             {!isSticky && (
                 <div className={styles.topSectionContainer}>
                     <div className={styles.linksContainer}>
-                        <a href="#">Member Services</a>
-                        <a href="#">Social 1</a>
-                        <a href="#">Social 2</a>
+                        <Link href="/admin">Admin</Link>
                     </div>
                 </div>
             )}
