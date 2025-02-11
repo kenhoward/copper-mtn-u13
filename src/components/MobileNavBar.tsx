@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useGlobal } from '../context/GlobalContext';
 // components
 import Logo from './Logo';
-import ThemeToggle from './ThemeToggle';
 // styles
 import styles from './MobileNavBar.module.scss';
 
