@@ -92,10 +92,9 @@ body {
 }
 
 body {
-    color: var(--foreground-rgb);
-    background: linear-gradient(to bottom,
-            transparent,
-            var(--background-end-rgb)) var(--background-start-rgb);
+    color: var(--dark-grey);
+    min-height: 60em;
+    background: url('https://res.cloudinary.com/dqlpq0s6t/image/upload/v1739209745/u13-soccer/vikram-tkv-JO19K0HDDXI-unsplash_lo9cpu.jpg') no-repeat center center/cover;
 }
 
 a {
