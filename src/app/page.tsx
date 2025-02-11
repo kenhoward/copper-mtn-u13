@@ -7,9 +7,7 @@ export default function Home() {
         <div className={styles.landing}>
             <div className={styles.hero}>
                 <h1>Welcome to Copper Mountain U13</h1>
-                <div className={styles.mainContent}>
-                    <NextMatch />
-                </div>
+                <NextMatch />
             </div>
         </div>
     );

@@ -3,6 +3,7 @@
     
     h1 {
         margin-bottom: 25px;
+        text-align: center;
     }
 
     @media screen and (max-width: 768px) {
@@ -22,32 +23,4 @@
     @media screen and (max-width: 768px) {
         max-height: 50em;
     }
-}
-
-.mainContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 175px;
-    min-width: 400px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.nextMatch {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.moreInfo {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #0070f3;
-    text-decoration: none;
-}
-
-.moreInfo:hover {
-    text-decoration: underline;
 }
