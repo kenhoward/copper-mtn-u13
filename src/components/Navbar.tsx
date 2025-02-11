@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useGlobal } from '../context/GlobalContext';
 // components
 import Logo from './Logo';
-import ThemeToggle from './ThemeToggle';
+// import ThemeToggle from './ThemeToggle';
 // styles
 import styles from './Navbar.module.scss';
 
@@ -42,7 +42,7 @@ const Navbar = () => {
                                     <Link href="/stats">STATS</Link>
                                 </li>
                             </ul>
-                            <ThemeToggle />
+                            {/* <ThemeToggle /> */}
                         </div>
                     </nav>
                 </div>
