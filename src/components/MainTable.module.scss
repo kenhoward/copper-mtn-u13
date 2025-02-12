@@ -1,0 +1,16 @@
+.mainTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.mainTable th,
+.mainTable td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.mainTable th {
+    background-color: #f4f4f4;
+}

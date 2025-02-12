@@ -19,16 +19,31 @@
 }
 
 .nextMatch {
+    background: #f9f9f9;
+    // padding: 1.5rem;
     padding: 25px 40px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 
-    span {
-        font-weight: bold;
+    i {
+        margin-right: 15px;
     }
 
     p {
         padding: 5px 0;
     }
+}
+
+.moreInfo {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.moreInfo:hover {
+    text-decoration: underline;
 }
 
 .moreInfo {

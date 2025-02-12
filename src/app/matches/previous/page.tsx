@@ -1,8 +1,8 @@
 "use client";
-import NextMatch, { Match } from "@/components/NextMatch";
 import MainTable from "@/components/MainTable";
+import { Match } from "@/components/NextMatch";
 import Link from "next/link";
-import styles from "./Matches.module.scss";
+import styles from "./PreviousMatches.module.scss";
 
 //* Data contract that will come from Firebase
 // TODO add this to context
@@ -78,7 +78,6 @@ const scheduleArr: Match[] = [
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
-        notes: "Double header Today!"
     },
     {
         date: "2025-03-28",
@@ -88,7 +87,6 @@ const scheduleArr: Match[] = [
         location: "Outdoor Field",
         score: "TBD",
         league: "Outdoor",
-        notes: "Second game of double header"
     },
     {
         date: "2025-04-04",
@@ -126,30 +124,32 @@ const scheduleArr: Match[] = [
         score: "TBD",
         league: "Outdoor",
     },
-];
+]
 
 // TODO update when context is added
-// TODO Make this DRY (previous matches page)
+// TODO Make this DRY (matches page)
 const allMatches: Match[] = scheduleArr.sort(
     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
 );
 
 const currentDate = new Date();
 // TODO may do this differently with context
-const upcomingMatches = allMatches.filter(
-    (match) => new Date(match.date) >= currentDate
+const previousMatches = allMatches.filter(
+    (match) => new Date(match.date) < currentDate
 );
-const nextMatch = upcomingMatches[0];
 
-export default function MatchesPage() {
+export default function PreviousMatchesPage() {
     return (
-        <div className={styles.matchesPage}>
-            <h1>Matches</h1>
-            <div className={styles.previousMatchesLink}>
-                <Link href="/matches/previous">View Previous Matches</Link>
-            </div>
-            {nextMatch && <NextMatch matchData={nextMatch} />}
-            <MainTable matches={upcomingMatches} />
+        <div className={styles.previousMatchesPage}>
+            <h1>Previous Matches</h1>
+            {previousMatches.length > 0 ? (
+                <MainTable matches={previousMatches} />
+            ) : (
+                <p>No previous matches available.</p>
+            )}
+            <Link className={styles.backLink}  href="/matches">
+                Back to Matches
+            </Link>
         </div>
     );
 }

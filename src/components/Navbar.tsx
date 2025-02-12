@@ -28,6 +28,8 @@ const Navbar = () => {
                             <div className={styles.logo}>
                                 <Logo />
                             </div>
+                            {/* // TODO make this DRY */}
+                            {/* // TODO fix the spacing in new component as well */}
                             <ul className={styles.navLinks}>
                                 <li>
                                     <Link href="/">HOME</Link>
@@ -42,6 +44,7 @@ const Navbar = () => {
                                     <Link href="/stats">STATS</Link>
                                 </li>
                             </ul>
+                            {/* // TODO evaluate if I still want this functionality */}
                             {/* <ThemeToggle /> */}
                         </div>
                     </nav>
