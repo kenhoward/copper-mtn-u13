@@ -52,7 +52,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     // Temporary schedule data (dummy data)
     const dummySchedule: Match[] = [
         {
-            date: "01-03-2025",
+            date: "2025-01-03",
             opponent: "City SC Elite 12B",
             isHome: false,
             time: "5:00 PM",
@@ -62,7 +62,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "01-10-2025",
+            date: "2025-01-10",
             opponent: "Blast 12B",
             isHome: false,
             time: "5:00 PM",
@@ -72,7 +72,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: ["Nate", "Oli", "Oli"]
         },
         {
-            date: "01-25-2025",
+            date: "2025-01-25",
             opponent: "Vipers",
             isHome: true,
             time: "3:40 PM",
@@ -82,7 +82,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "02-15-2025",
+            date: "2025-02-15",
             opponent: "City SC Utah Premier",
             isHome: true,
             time: "5:10 PM",
@@ -92,7 +92,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "03-01-2025",
+            date: "2025-03-01",
             opponent: "SSFC Thunder",
             isHome: false,
             time: "4:25 PM",
@@ -102,7 +102,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "03-15-2025",
+            date: "2025-03-15",
             opponent: "Blast 12B",
             isHome: true,
             time: "3:45 PM",
@@ -112,7 +112,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "03-21-2025",
+            date: "2025-03-21",
             opponent: "Cobras",
             isHome: true,
             time: "4:00 PM",
@@ -122,7 +122,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "03-28-2025",
+            date: "2025-03-28",
             opponent: "SSFC Thunder",
             isHome: false,
             time: "6:45 PM",
@@ -133,7 +133,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             notes: "Double header Today!"
         },
         {
-            date: "03-28-2025",
+            date: "2025-03-28",
             opponent: "Impact FA 12B",
             isHome: true,
             time: "2:00 PM",
@@ -144,7 +144,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             notes: "Second game of double header"
         },
         {
-            date: "04-04-2025",
+            date: "2025-04-04",
             opponent: "City SC UT Elite 12B - JP",
             isHome: false,
             time: "3:00 PM",
@@ -154,7 +154,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "04-11-2025",
+            date: "2025-04-11",
             opponent: "River Mountain FC B12 White",
             isHome: true,
             time: "1:30 PM",
@@ -164,7 +164,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "04-18-2025",
+            date: "2025-04-18",
             opponent: "City SC UT Elite 12B - MM",
             isHome: false,
             time: "4:00 PM",
@@ -174,7 +174,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "04-25-2025",
+            date: "2025-04-25",
             opponent: "Utah Glory B12 Red JAX",
             isHome: true,
             time: "2:30 PM",

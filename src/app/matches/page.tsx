@@ -23,7 +23,7 @@ export default function MatchesPage() {
     // Filter upcoming matches with a one-hour grace period
     const upcomingMatches = allMatches.filter((match) => {
         const matchDateTime = new Date(`${match.date} ${match.time}`);
-        // Add one hour
+        // Adds one hour to allow for actual match times
         matchDateTime.setHours(matchDateTime.getHours() + 1);
         return matchDateTime >= currentDate;
     });
