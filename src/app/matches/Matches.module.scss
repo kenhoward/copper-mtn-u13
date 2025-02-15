@@ -1,17 +1,21 @@
 .matchesPage {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
 }
 
 .previousMatchesLink {
     margin-top: 2rem;
-    text-align: right;
-}
+    text-align: center;
+    
+    a {
+        color: var(--dark-green);
+        font-weight: bold;
+        text-decoration: none;
 
-.previousMatchesLink a {
-    color: #0070f3;
-    text-decoration: none;
-}
 
-.previousMatchesLink a:hover {
-    text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

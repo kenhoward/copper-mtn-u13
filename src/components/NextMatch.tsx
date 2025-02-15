@@ -11,15 +11,17 @@ export interface Match {
     time: string;
     location: string;
     score: string;
-    league: "Indoor" | "Outdoor";
+    league?: "Indoor" | "Outdoor";
+    goalScorers?: string[];
     notes?: string;
 }
 
 interface NextMatchProps {
     matchData?: Match;
+    isMatchesPage?: boolean;
 }
 
-const NextMatch = ({ matchData }: NextMatchProps) => {
+const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
     const [match, setMatch] = useState<Match | null>(matchData || null);
 
     useEffect(() => {
@@ -47,28 +49,32 @@ const NextMatch = ({ matchData }: NextMatchProps) => {
     return (
         <div className={styles.nextMatch}>
             <h2>Next Game</h2>
-            <p>
-                <i className="fa-regular fa-calendar"></i><b>Date:</b> {match.date}
-            </p>
-            <p>
-                <i className="fa-solid fa-futbol"></i><b>Opponent:</b>{" "}
-                {match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}
-            </p>
-            <p>
-                <i className="fa-regular fa-clock"></i><b>Time:</b> {match.time}
-            </p>
-            <p>
-                <i className="fa-solid fa-map-location-dot"></i><b>Location:</b> {match.location}
-            </p>
-            <p>
-                <i className="fa-solid fa-table-cells"></i><b>Score:</b> {match.score}
-            </p>
-            <p>
-                <i className="fa-solid fa-cloud-sun"></i><b>League:</b> {match.league}
-            </p>
-            <Link className={styles.moreInfo} href="/matches">
-                See full match details <i className="fa-solid fa-arrow-right fa-beat"></i>
-            </Link>
+            <div className={styles.nextMatchDetails}>
+                <p>
+                    <i className="fa-regular fa-calendar"></i><b>Date:</b> {match.date}
+                </p>
+                <p>
+                    <i className="fa-solid fa-futbol"></i><b>Opponent:</b>{" "}
+                    {match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}
+                </p>
+                <p>
+                    <i className="fa-regular fa-clock"></i><b>Time:</b> {match.time}
+                </p>
+                <p>
+                    <i className="fa-solid fa-map-location-dot"></i><b>Location:</b> {match.location}
+                </p>
+                {/* <p>
+                    <i className="fa-solid fa-table-cells"></i><b>Score:</b> {match.score}
+                </p> */}
+                <p>
+                    <i className="fa-solid fa-cloud-sun"></i><b>League:</b> {match.league}
+                </p>
+            </div>
+            {!isMatchesPage && (
+                <Link className={styles.moreInfo} href="/matches">
+                    See full match details <i className="fa-solid fa-arrow-right fa-beat"></i>
+                </Link>
+            )}
         </div>
     );
 };

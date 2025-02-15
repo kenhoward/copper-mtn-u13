@@ -8,123 +8,138 @@ import styles from "./PreviousMatches.module.scss";
 // TODO add this to context
 const scheduleArr: Match[] = [
     {
-        date: "2025-01-03",
+        date: "01-03-2025",
         opponent: "City SC Elite 12B",
         isHome: false,
         time: "5:00 PM",
         location: "Sporty City",
         score: "L 4-5",
         league: "Indoor",
+        goalScorers: ["Tony", "Tony", "Oli"]
     },
     {
-        date: "2025-01-10",
+        date: "01-10-2025",
         opponent: "Blast 12B",
         isHome: false,
         time: "5:00 PM",
         location: "Sport City",
         score: "L 0-4",
         league: "Indoor",
+        goalScorers: ["Nate", "Oli", "Oli"]
     },
     {
-        date: "2025-01-25",
+        date: "01-25-2025",
         opponent: "Vipers",
         isHome: true,
         time: "3:40 PM",
         location: "Sport City",
         score: "W 5-1",
         league: "Indoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-02-15",
+        date: "02-15-2025",
         opponent: "City SC Utah Premier",
         isHome: true,
         time: "5:10 PM",
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-03-01",
+        date: "03-01-2025",
         opponent: "SSFC Thunder",
         isHome: false,
         time: "4:25 PM",
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-03-15",
+        date: "03-15-2025",
         opponent: "Blast 12B",
         isHome: true,
         time: "3:45 PM",
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-03-21",
+        date: "03-21-2025",
         opponent: "Cobras",
         isHome: true,
         time: "4:00 PM",
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-03-28",
+        date: "03-28-2025",
         opponent: "SSFC Thunder",
         isHome: false,
         time: "6:45 PM",
         location: "Sport City",
         score: "TBD",
         league: "Indoor",
+        goalScorers: [""],
+        notes: "Double header Today!"
     },
     {
-        date: "2025-03-28",
+        date: "03-28-2025",
         opponent: "Impact FA 12B",
         isHome: true,
         time: "2:00 PM",
         location: "Outdoor Field",
         score: "TBD",
         league: "Outdoor",
+        goalScorers: [""],
+        notes: "Second game of double header"
     },
     {
-        date: "2025-04-04",
+        date: "04-04-2025",
         opponent: "City SC UT Elite 12B - JP",
         isHome: false,
         time: "3:00 PM",
         location: "Opponent Stadium",
         score: "TBD",
         league: "Outdoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-04-11",
+        date: "04-11-2025",
         opponent: "River Mountain FC B12 White",
         isHome: true,
         time: "1:30 PM",
         location: "Outdoor Field",
         score: "TBD",
         league: "Outdoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-04-18",
+        date: "04-18-2025",
         opponent: "City SC UT Elite 12B - MM",
         isHome: false,
         time: "4:00 PM",
         location: "Opponent Stadium",
         score: "TBD",
         league: "Outdoor",
+        goalScorers: [""]
     },
     {
-        date: "2025-04-25",
+        date: "04-25-2025",
         opponent: "Utah Glory B12 Red JAX",
         isHome: true,
         time: "2:30 PM",
         location: "Outdoor Field",
         score: "TBD",
         league: "Outdoor",
+        goalScorers: [""]
     },
-]
+];
 
 // TODO update when context is added
 // TODO Make this DRY (matches page)
@@ -142,14 +157,14 @@ export default function PreviousMatchesPage() {
     return (
         <div className={styles.previousMatchesPage}>
             <h1>Previous Matches</h1>
-            {previousMatches.length > 0 ? (
-                <MainTable matches={previousMatches} />
-            ) : (
-                <p>No previous matches available.</p>
-            )}
             <Link className={styles.backLink}  href="/matches">
                 Back to Matches
             </Link>
+            {previousMatches.length > 0 ? (
+                <MainTable matches={previousMatches} isPreviousMatchesPage />
+            ) : (
+                <p>No previous matches available.</p>
+            )}
         </div>
     );
 }
