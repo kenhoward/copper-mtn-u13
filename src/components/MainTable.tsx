@@ -8,6 +8,7 @@ interface MainTableProps {
     isPreviousMatchesPage?: boolean;
 }
 
+// TODO fix previous matches scroll
 const MainTable = ({
     matches,
     isMatchesPage,

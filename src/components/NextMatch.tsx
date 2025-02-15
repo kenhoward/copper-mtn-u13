@@ -9,6 +9,8 @@ export interface Match {
     time: string;
     location: string;
     score: string;
+    goalScorers?: string[];
+    notes?: string;
     league: "Indoor" | "Outdoor";
 }
 
