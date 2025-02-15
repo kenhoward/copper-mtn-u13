@@ -13,6 +13,8 @@ const MobileNavbar = () => {
         <nav>
             <div className={`${styles.linksContainer} ${isSticky ? styles.sticky : ''}`}>
                 <Logo mobile />
+                {/* // TODO make this DRY */}
+                {/* // TODO fix the spacing in new component as well */}
                 <ul>
                     <li>
                         <Link href="/">HOME</Link>

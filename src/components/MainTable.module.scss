@@ -1,0 +1,51 @@
+.tableWrapper {
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mainTable {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: center;
+
+    th,
+    td {
+        background-color: #ddd;
+        opacity: 0.95;
+        border: 1px solid #ddd;
+        padding: 0.75rem;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+}
+
+@media (max-width: 600px) {
+    .scrollIndicator {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        height: calc(100% - 1rem);
+        width: 90px;
+        pointer-events: none;
+        background: linear-gradient(to left,
+            rgb(197, 196, 196),
+            rgba(255, 255, 255, 0));
+    }
+}

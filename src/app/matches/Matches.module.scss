@@ -1,0 +1,33 @@
+.matchesPage {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.previousMatchesLink {
+    margin-top: 1rem;
+    text-align: center;
+    
+    a {
+        color: var(--dark-green);
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+.scrollPrompt {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .scrollPrompt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        i {
+            margin-left: 8px;
+        }
+    }
+}

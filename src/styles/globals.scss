@@ -36,6 +36,8 @@
 
     // Custom Colors
     --dark-grey: #34495e;
+    --dark-green: #0E2902;
+    --off-white: #f9f9f9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -95,6 +97,10 @@ body {
     color: var(--dark-grey);
     min-height: 60em;
     background: url('https://res.cloudinary.com/dqlpq0s6t/image/upload/v1739209745/u13-soccer/vikram-tkv-JO19K0HDDXI-unsplash_lo9cpu.jpg') no-repeat center center/cover;
+}
+
+h1 {
+    text-align: center;
 }
 
 a {

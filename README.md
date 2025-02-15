@@ -23,7 +23,11 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 │   │── admin
 │   │   └── page.tsx
 │   │── matches
+│   │   └── previous
+│   │   │   └── page.tsx
+│   │   │   └── PreviousMatches.module.scss
 │   │   └── page.tsx
+│   │   └── Matches.module.tsx
 │   │── stats
 │   │   └── page.tsx
 │   │── table
@@ -33,6 +37,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 │── components
 │   │── Layout.tsx
 │   │── Logo.tsx
+│   │── MainTable.module.scss
+│   │── MainTable.tsx
 │   │── Navbar.module.scss
 │   │── Navbar.tsx
 │   │── NexMatch.tsx
