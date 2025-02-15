@@ -1,16 +1,13 @@
 "use client";
 import NextMatch, { Match } from "@/components/NextMatch";
-// context
 import { useGlobal } from "@/context/GlobalContext";
-// utils
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
-// styles
 import styles from "./Landing.module.scss";
 
 export default function Home() {
     const { scheduleArr } = useGlobal();
 
-    const allMatches: Match[] = scheduleArr.sort(
+    const allMatches: Match[] = [...scheduleArr].sort(
         (a, b) => getMatchEffectiveDate(a).getTime() - getMatchEffectiveDate(b).getTime()
     );
 
