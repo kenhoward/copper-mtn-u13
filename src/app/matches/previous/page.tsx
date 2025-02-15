@@ -5,24 +5,20 @@ import { Match } from "@/components/NextMatch";
 import Link from "next/link";
 // context
 import { useGlobal } from "@/context/GlobalContext";
+// utils
+import { getMatchEffectiveDate } from "@/utils/dateFormatter";
 // styles
 import styles from "./PreviousMatches.module.scss";
 
 export default function PreviousMatchesPage() {
     const { scheduleArr } = useGlobal();
 
-    const allMatches: Match[] = scheduleArr.sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    const allMatches: Match[] = [...scheduleArr].sort(
+        (a, b) => getMatchEffectiveDate(a).getTime() - getMatchEffectiveDate(b).getTime()
     );
 
     const currentDate = new Date();
-
-    // Filter previous matches by combining date and time then adding a one-hour grace period.
-    const previousMatches = allMatches.filter((match) => {
-        const matchDateTime = new Date(`${match.date} ${match.time}`);
-        matchDateTime.setHours(matchDateTime.getHours() + 1);
-        return matchDateTime < currentDate;
-    });
+    const previousMatches = allMatches.filter((match) => getMatchEffectiveDate(match) < currentDate);
 
     // TODO I need to fix the scroll on previous matches on mobile
     return (

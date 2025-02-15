@@ -32,7 +32,7 @@ const MainTable = ({
                     <tbody>
                         {matches.map((match, index) => (
                             <tr key={index}>
-                                <td>{match.date}</td>
+                                <td>{new Date(match.date).toLocaleDateString()}</td>
                                 <td>
                                     {match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}
                                 </td>

@@ -15,7 +15,7 @@ export interface Match {
 }
 
 interface NextMatchProps {
-    matchData?: Match; // now optional
+    matchData?: Match;
     isMatchesPage?: boolean;
 }
 

@@ -5,6 +5,8 @@ import MainTable from "@/components/MainTable";
 import Link from "next/link";
 // context
 import { useGlobal } from "@/context/GlobalContext";
+// utils
+import { getMatchEffectiveDate } from "@/utils/dateFormatter";
 // styles
 import styles from "./Matches.module.scss";
 
@@ -13,21 +15,12 @@ import styles from "./Matches.module.scss";
 export default function MatchesPage() {
     const { scheduleArr } = useGlobal();
 
-    // Create an allMatches array by sorting scheduleArr
-    const allMatches: Match[] = scheduleArr.sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    const allMatches: Match[] = [...scheduleArr].sort(
+        (a, b) => getMatchEffectiveDate(a).getTime() - getMatchEffectiveDate(b).getTime()
     );
 
     const currentDate = new Date();
-
-    // Filter upcoming matches with a one-hour grace period
-    const upcomingMatches = allMatches.filter((match) => {
-        const matchDateTime = new Date(`${match.date} ${match.time}`);
-        // Adds one hour to allow for actual match times
-        matchDateTime.setHours(matchDateTime.getHours() + 1);
-        return matchDateTime >= currentDate;
-    });
-
+    const upcomingMatches = allMatches.filter((match) => getMatchEffectiveDate(match) >= currentDate);
     const nextMatch = upcomingMatches[0];
 
     return (
