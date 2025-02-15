@@ -3,14 +3,11 @@
 }
 
 .backLink {
-    display: inline-block;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
     color: var(--dark-green);
     font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-}
-
-.backLink:hover {
     text-decoration: underline;
+    text-align: center;
 }

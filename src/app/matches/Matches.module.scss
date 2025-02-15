@@ -5,17 +5,29 @@
 }
 
 .previousMatchesLink {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
     
     a {
         color: var(--dark-green);
         font-weight: bold;
-        text-decoration: none;
+        text-decoration: underline;
+    }
+}
 
+.scrollPrompt {
+    display: none;
+}
 
-        &:hover {
-            text-decoration: underline;
+@media screen and (max-width: 600px) {
+    .scrollPrompt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        i {
+            margin-left: 8px;
         }
     }
 }
