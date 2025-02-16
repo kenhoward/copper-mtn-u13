@@ -69,7 +69,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             location: "Sport City",
             score: "L 0-4",
             league: "Indoor",
-            goalScorers: ["No Data"]
+            goalScorers: ["No Goals"]
         },
         {
             date: "2025-01-25",
@@ -87,9 +87,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "5:10 PM",
             location: "Sport City",
-            score: "TBD",
+            score: "L 3-7",
             league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["Landon - 14'", "Tyler - 26'", "Oli - 27'"]
         },
         {
             date: "2025-03-01",

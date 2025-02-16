@@ -18,7 +18,7 @@ export default function PreviousMatchesPage() {
     );
 
     const currentDate = new Date();
-    const previousMatches = allMatches.filter((match) => getMatchEffectiveDate(match) < currentDate);
+    const previousMatches = allMatches.filter((match) => getMatchEffectiveDate(match) < currentDate).reverse();
 
     // TODO I need to fix the scroll on previous matches on mobile
     return (
