@@ -1,5 +1,8 @@
 "use client";
 import { Match } from "./NextMatch";
+// utils
+import { formatDateLocal } from '../utils/dateFormatter';
+// styles
 import styles from "./MainTable.module.scss";
 
 interface MainTableProps {
@@ -32,7 +35,7 @@ const MainTable = ({
                     <tbody>
                         {matches.map((match, index) => (
                             <tr key={index}>
-                                <td>{new Date(match.date).toLocaleDateString()}</td>
+                                <td>{formatDateLocal(match.date)}</td>
                                 <td>
                                     {match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}
                                 </td>
@@ -40,7 +43,7 @@ const MainTable = ({
                                 {!isPreviousMatchesPage && <td>{match.isHome ? "Blue" : "White"}</td>}
                                 {!isPreviousMatchesPage && <td>{match.location}</td>}
                                 {!isMatchesPage && <td>{match.score}</td>}
-                                {isPreviousMatchesPage && <td>{match.goalScorers?.join(", ")}</td>}
+                                {isPreviousMatchesPage && <td>{match.goalScorers?.join(" | ")}</td>}
                             </tr>
                         ))}
                     </tbody>

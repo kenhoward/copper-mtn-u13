@@ -19,3 +19,10 @@ export function getMatchEffectiveDate(match: { date: string; time: string }): Da
     dt.setHours(dt.getHours() + 1); // add one-hour grace period
     return dt;
 }
+
+export function formatDateLocal(dateStr: string): string {
+    // dateStr is expected to be in "YYYY-MM-DD" format.
+    // Simply rearrange the parts to "MM-DD-YYYY".
+    const [year, month, day] = dateStr.split("-");
+    return `${month}-${day}-${year}`;
+}
