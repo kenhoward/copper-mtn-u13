@@ -89,7 +89,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             location: "Sport City",
             score: "L 3-7",
             league: "Indoor",
-            goalScorers: ["Landon - 14'", "Tyler - 26'", "Oli - 27'"]
+            goalScorers: ["Landon - 14'", "Tyler - 26'", "Ollie - 27'"]
         },
         {
             date: "2025-03-01",
@@ -116,14 +116,14 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Cobras",
             isHome: true,
             time: "4:00 PM",
-            location: "Sport City",
+            location: "TBD",
             score: "TBD",
-            league: "Indoor",
+            league: "Outdoor",
             goalScorers: [""]
         },
         {
             date: "2025-03-28",
-            opponent: "SSFC Thunder",
+            opponent: "SSFC Thunder SJ",
             isHome: false,
             time: "6:45 PM",
             location: "Sport City",
@@ -137,7 +137,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Impact FA 12B",
             isHome: true,
             time: "2:00 PM",
-            location: "Outdoor Field",
+            location: "TBD",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""],
@@ -148,7 +148,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "City SC UT Elite 12B - JP",
             isHome: false,
             time: "3:00 PM",
-            location: "Opponent Stadium",
+            location: "TBD",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""]
@@ -158,7 +158,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "River Mountain FC B12 White",
             isHome: true,
             time: "1:30 PM",
-            location: "Outdoor Field",
+            location: "TBD",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""]
@@ -168,7 +168,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "City SC UT Elite 12B - MM",
             isHome: false,
             time: "4:00 PM",
-            location: "Opponent Stadium",
+            location: "TBD",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""]
@@ -178,7 +178,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Utah Glory B12 Red JAX",
             isHome: true,
             time: "2:30 PM",
-            location: "Outdoor Field",
+            location: "TBD",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""]

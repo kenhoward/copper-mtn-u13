@@ -39,16 +39,13 @@ const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
                 <p>
                     <i className="fa-solid fa-map-location-dot"></i><b>Location:</b> {matchData.location}
                 </p>
-                {/* <p>
-                    <i className="fa-solid fa-table-cells"></i><b>Score:</b> {matchData.score}
-                </p> */}
                 <p>
-                    <i className="fa-solid fa-cloud-sun"></i><b>League:</b> {matchData.league}
+                    <i className="fa-solid fa-shirt"></i><b>Jersey:</b> {matchData.isHome ? "Blue" : "White" }
                 </p>
             </div>
             {!isMatchesPage && (
                 <Link className={styles.moreInfo} href="/matches">
-                    See full match details <i className="fa-solid fa-arrow-right fa-beat"></i>
+                    See all match details <i className="fa-solid fa-arrow-right fa-beat"></i>
                 </Link>
             )}
         </div>
