@@ -6,7 +6,7 @@
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
         "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-    --foreground-rgb: #000000;
+    --foreground-rgb: var(--black-color);
     --background-start-rgb: #d6dbdc;
     --background-end-rgb: #ffffff;
 
@@ -37,14 +37,19 @@
     // Custom Colors
     --dark-grey: #34495e;
     --dark-green: #0E2902;
+    --light-grey: #f4f4f4;
     --off-white: #f9f9f9;
+    --soft-canary: #FDFDB6
+    --black-color: #000000;
+    --light-green: #EAF496;
+    --dark-green: #0E2902;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: #ffffff;
-        --background-start-rgb: #000000;
-        --background-end-rgb: #000000;
+        --background-start-rgb: var(--black-color);
+        --background-end-rgb: var(--black-color);
 
         --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
         --secondary-glow: linear-gradient(to bottom right,

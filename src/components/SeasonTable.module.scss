@@ -1,0 +1,40 @@
+.seasonTableContainer {
+    margin-bottom: 3rem;
+}
+
+.responsiveTableContainer {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 1rem;
+
+    @media screen and (max-width: 600px) {
+        min-width: 0;
+    }
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    opacity: 0.95;
+    padding: 0.75rem;
+}
+
+.table th {
+    background-color: var(--light-grey);
+}
+
+@media (max-width: 600px) {
+
+    .table th,
+    .table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+}

@@ -1,5 +1,5 @@
 .landing {
-    color: var(--dark-grey); // TODO update
+    color: var(--dark-grey);
     
     h1 {
         margin-bottom: 25px;
@@ -15,8 +15,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    // height: 60em;
-    // background: url('https://res.cloudinary.com/dqlpq0s6t/image/upload/v1739209745/u13-soccer/vikram-tkv-JO19K0HDDXI-unsplash_lo9cpu.jpg') no-repeat center center/cover;
     padding: 4rem 2rem;
 
     @media screen and (max-width: 768px) {

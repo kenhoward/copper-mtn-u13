@@ -27,16 +27,17 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     // TODO probably ought to offload to some config
     const magicIsMobileNumber = 600;
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // TODO make more dynamic off the header height
-            const scrollThreshold = isMobile ? 70 : 40;
-            setIsSticky(window.scrollY > scrollThreshold);
-        };
+    // TODO fix sticky header issues
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         // TODO make more dynamic off the header height
+    //         const scrollThreshold = isMobile ? 70 : 40;
+    //         setIsSticky(window.scrollY > scrollThreshold);
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     useEffect(() => {
         const handleResize = () => {
