@@ -22,6 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 │── app
 │   │── admin
 │   │   └── page.tsx
+│   │   └── Admin.module.scss
 │   │── matches
 │   │   └── previous
 │   │   │   └── page.tsx
@@ -30,6 +31,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 │   │   └── Matches.module.tsx
 │   │── stats
 │   │   └── page.tsx
+│   │   └── Stats.module.scss
 │   │── table
 │   │── favicon.ico
 │   │── layout.tsx
@@ -43,6 +45,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 │   │── Navbar.tsx
 │   │── NexMatch.tsx
 │   │── NexMatch.module.scss
+│   │── SeasonTable.module.scss
+│   │── SeasonTable.tsx
 │   │── ThemeToggle.module.scss
 │   └── ThemeToggle.tsx
 │── context
