@@ -17,6 +17,9 @@ const MainTable = ({
     isMatchesPage,
     isPreviousMatchesPage,
 }: MainTableProps) => {
+    const hasNotes = matches.some((match) => match.notes);
+    console.log('hasNotes', hasNotes);
+
     return (
         <div className={styles.tableWrapper}>
             <div className={styles.tableContainer}>
@@ -28,6 +31,7 @@ const MainTable = ({
                             {!isPreviousMatchesPage && <th>Time</th>}
                             {!isPreviousMatchesPage && <th>Jersey Color</th>}
                             {!isPreviousMatchesPage && <th>Location</th>}
+                            {!isPreviousMatchesPage && <th>Notes</th>}
                             {!isMatchesPage && <th>Score</th>}
                             {isPreviousMatchesPage && <th>Goal Scorers</th>}
                         </tr>
@@ -42,6 +46,7 @@ const MainTable = ({
                                 {!isPreviousMatchesPage && <td>{match.time}</td>}
                                 {!isPreviousMatchesPage && <td>{match.isHome ? "Blue" : "White"}</td>}
                                 {!isPreviousMatchesPage && <td>{match.location}</td>}
+                                {!isPreviousMatchesPage && <td>{match.notes}</td>}
                                 {!isMatchesPage && <td>{match.score}</td>}
                                 {isPreviousMatchesPage && <td>{match.goalScorers?.join(" | ")}</td>}
                             </tr>

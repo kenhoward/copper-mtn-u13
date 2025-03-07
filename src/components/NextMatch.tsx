@@ -42,6 +42,11 @@ const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
                 <p>
                     <i className="fa-solid fa-shirt"></i><b>Jersey:</b> {matchData.isHome ? "Blue" : "White" }
                 </p>
+                {matchData.notes && (
+                    <p>
+                        <i className="fa-solid fa-comment fa-bounce"></i><b>Notes</b> {matchData.notes}
+                    </p>
+                )}
             </div>
             {!isMatchesPage && (
                 <Link className={styles.moreInfo} href="/matches">

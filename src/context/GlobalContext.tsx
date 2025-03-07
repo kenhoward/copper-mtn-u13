@@ -67,7 +67,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Blast 12B",
             isHome: false,
             time: "5:00 PM",
-            location: "Sport City",
+            location: "Sport City (Indoor)",
             score: "L 0-4",
             league: "Indoor",
             goalScorers: ["No Goals"]
@@ -77,7 +77,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Vipers",
             isHome: true,
             time: "3:40 PM",
-            location: "Sport City",
+            location: "Sport City (Indoor)",
             score: "W 5-1",
             league: "Indoor",
             goalScorers: ["No Data"]
@@ -87,7 +87,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "City SC Utah Premier",
             isHome: true,
             time: "5:10 PM",
-            location: "Sport City",
+            location: "Sport City (Indoor)",
             score: "L 3-7",
             league: "Indoor",
             goalScorers: ["Landon - 14'", "Tyler - 26'", "Ollie - 27'"]
@@ -97,17 +97,17 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "SSFC Thunder",
             isHome: false,
             time: "4:25 PM",
-            location: "Sport City",
-            score: "TBD",
+            location: "Sport City (Indoor)",
+            score: "L 9-0",
             league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["No Goals"]
         },
         {
             date: "2025-03-15",
             opponent: "Blast 12B",
             isHome: true,
             time: "3:45 PM",
-            location: "Sport City",
+            location: "Sport City (Indoor)",
             score: "TBD",
             league: "Indoor",
             goalScorers: [""]
@@ -117,69 +117,122 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             opponent: "Cobras",
             isHome: true,
             time: "4:00 PM",
-            location: "TBD",
-            score: "TBD",
-            league: "Outdoor",
-            goalScorers: [""]
-        },
-        {
-            date: "2025-03-28",
-            opponent: "SSFC Thunder SJ",
-            isHome: false,
-            time: "6:45 PM",
-            location: "Sport City",
+            location: "Sport City (Indoor)",
             score: "TBD",
             league: "Indoor",
             goalScorers: [""],
-            notes: "Double header Today!"
+            notes: "Reminder: We have a game scheduled for tomorrow."
         },
         {
-            date: "2025-03-28",
-            opponent: "Impact FA 12B",
+            date: "2025-03-22",
+            opponent: "City SC Elite MM",
             isHome: true,
-            time: "2:00 PM",
-            location: "TBD",
+            time: "6:40 PM",
+            location: "Monarch Meadows",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""],
-            notes: "Second game of double header"
+            notes: "First outdoor match!"
         },
         {
-            date: "2025-04-04",
-            opponent: "City SC UT Elite 12B - JP",
-            isHome: false,
-            time: "3:00 PM",
-            location: "TBD",
-            score: "TBD",
-            league: "Outdoor",
-            goalScorers: [""]
-        },
-        {
-            date: "2025-04-11",
-            opponent: "River Mountain FC B12 White",
+            date: "2025-03-24",
+            opponent: "Utah Glory",
             isHome: true,
-            time: "1:30 PM",
-            location: "TBD",
+            time: "6:55 PM",
+            location: "Monarch Meadows",
             score: "TBD",
             league: "Outdoor",
-            goalScorers: [""]
-        },
-        {
-            date: "2025-04-18",
-            opponent: "City SC UT Elite 12B - MM",
-            isHome: false,
-            time: "4:00 PM",
-            location: "TBD",
-            score: "TBD",
-            league: "Outdoor",
-            goalScorers: [""]
+            goalScorers: [""],
+            notes: "Reminder: We have a game scheduled for tomorrow."
         },
         {
             date: "2025-04-25",
-            opponent: "Utah Glory B12 Red JAX",
+            opponent: "Impact",
+            isHome: false,
+            time: "5:30 PM",
+            location: "2323 S 900 E (Fairmont Park)",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-03-28",
+            opponent: "SSFC Thunder",
+            isHome: false,
+            time: "6:45 PM",
+            location: "Sport City (Indoor)",
+            score: "TBD",
+            league: "Indoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-03-29",
+            opponent: "Impact",
             isHome: true,
-            time: "2:30 PM",
-            location: "TBD",
+            time: "5:15 PM",
+            location: "Monarch Meadows Park",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-04-12",
+            opponent: "City SC Elite MM",
+            isHome: false,
+            time: "2:25 PM",
+            location: "Rowland Hall - Soccer Fields",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""],
+            notes: "Near East High & UofU"
+        },
+        {
+            date: "2025-04-19",
+            opponent: "River Mountain",
+            isHome: false,
+            time: "11:45 AM",
+            location: "Majestic Elementary - West Jordan",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-04-26",
+            opponent: "City SC Elite JP",
+            isHome: false,
+            time: "9:55 PM",
+            location: "Rowland Hall - Soccer Fields",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""],
+            notes: "Near East High & UofU"
+        },
+        {
+            date: "2025-05-03",
+            opponent: "Utah Glory",
+            isHome: false,
+            time: "11:30 aM",
+            location: "Jordan Ridge Park",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-05-25",
+            opponent: "City SC Elite JP",
+            isHome: true,
+            time: "5:30 PM",
+            location: "Canyonview Park",
+            score: "TBD",
+            league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-05-07",
+            opponent: "River Mountain",
+            isHome: true,
+            time: "3:50 PM",
+            location: "Monarch Meadows Park",
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""]
