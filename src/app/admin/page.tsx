@@ -32,7 +32,7 @@ export default function AdminPage() {
                     className={styles.input}
                     required
                 />
-                <button type="submit" className={styles.submitButton}>
+                <button type="submit" className={styles.submitButton} disabled>
                     Submit
                 </button>
                 <p className={styles.footerText}>Admin access only</p>
