@@ -121,7 +121,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             score: "TBD",
             league: "Indoor",
             goalScorers: [""],
-            notes: "Reminder: We have a game scheduled for tomorrow."
+            notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
             date: "2025-03-22",
@@ -143,7 +143,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             score: "TBD",
             league: "Outdoor",
             goalScorers: [""],
-            notes: "Reminder: We have a game scheduled for tomorrow."
+            notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
             date: "2025-04-25",
