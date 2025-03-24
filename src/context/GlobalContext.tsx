@@ -98,7 +98,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "4:25 PM",
             location: "Sport City (Indoor)",
-            score: "L 9-0",
+            score: "L 0-9",
             league: "Indoor",
             goalScorers: ["No Goals"]
         },
@@ -108,9 +108,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "3:45 PM",
             location: "Sport City (Indoor)",
-            score: "TBD",
+            score: "T 1 - 1",
             league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["Nate - 24'"]
         },
         {
             date: "2025-03-21",
@@ -118,9 +118,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "4:00 PM",
             location: "Sport City (Indoor)",
-            score: "TBD",
+            score: "W 5 - 0",
             league: "Indoor",
-            goalScorers: [""],
+            goalScorers: ["Landon - 19'", "Nate - 20'", "Tony - 23'", "Kaiser - 28' & 32'"],
             notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
@@ -129,9 +129,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "6:40 PM",
             location: "Monarch Meadows",
-            score: "TBD",
+            score: "W 2 - 1",
             league: "Outdoor",
-            goalScorers: [""],
+            goalScorers: ["Nate - 14'", "Tony - 17'"],
             notes: "First outdoor match!"
         },
         {
@@ -156,16 +156,6 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "2025-03-28",
-            opponent: "SSFC Thunder",
-            isHome: false,
-            time: "6:45 PM",
-            location: "Sport City (Indoor)",
-            score: "TBD",
-            league: "Indoor",
-            goalScorers: [""]
-        },
-        {
             date: "2025-03-29",
             opponent: "Impact",
             isHome: true,
@@ -173,6 +163,16 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             location: "Monarch Meadows Park",
             score: "TBD",
             league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-03-31",
+            opponent: "SSFC Thunder",
+            isHome: false,
+            time: "6:45 PM",
+            location: "Sport City (Indoor)",
+            score: "TBD",
+            league: "Indoor",
             goalScorers: [""]
         },
         {
