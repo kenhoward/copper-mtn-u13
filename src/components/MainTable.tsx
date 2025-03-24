@@ -18,7 +18,6 @@ const MainTable = ({
     isPreviousMatchesPage,
 }: MainTableProps) => {
     const hasNotes = matches.some((match) => match.notes);
-    console.log('hasNotes', hasNotes);
 
     return (
         <div className={styles.tableWrapper}>
