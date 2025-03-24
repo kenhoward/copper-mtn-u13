@@ -146,7 +146,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
-            date: "2025-04-25",
+            date: "2025-03-25",
             opponent: "Impact",
             isHome: false,
             time: "5:30 PM",
