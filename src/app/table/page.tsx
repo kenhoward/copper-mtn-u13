@@ -98,7 +98,7 @@ const season2025: SeasonData[] = [
     },
     {
         team: "Utah Glory B12 Red JAX",
-        record: "0-0-0",
+        record: "0-0-1",
         games: ["-", "0", "-", "-", "-", "-", "-", "-"],
         totalPoints: 0,
         goalDiff: -1,
@@ -108,7 +108,7 @@ const season2025: SeasonData[] = [
     },
     {
         team: "Copper Mountain 12 WM",
-        record: "1-0-0",
+        record: "2-0-0",
         games: ["3", "3", "-", "-", "-", "-", "-", "-"],
         totalPoints: 6,
         goalDiff: 2,
