@@ -142,7 +142,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             location: "Monarch Meadows",
             score: "TBD",
             league: "Outdoor",
-            goalScorers: [""],
+            goalScorers: ["Nate - 6'", "Tony - 10'", "Tyler - 26'", "Oli - 38'", "Tyler - 46'"],
             notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
