@@ -58,8 +58,8 @@ const season2024: SeasonData[] = [
 const season2025: SeasonData[] = [
     {
         team: "Impact FA 12B",
-        record: "0-0-0",
-        games: ["-", "-", "-", "-", "-", "-", "-", "-"],
+        record: "1-0-0",
+        games: ["-", "3", "-", "-", "-", "-", "-", "-"],
         totalPoints: 0,
         goalDiff: 0,
         goalsAgainst: 0,
@@ -108,8 +108,8 @@ const season2025: SeasonData[] = [
     },
     {
         team: "Copper Mountain 12 WM",
-        record: "2-0-0",
-        games: ["3", "3", "-", "-", "-", "-", "-", "-"],
+        record: "2-1-0",
+        games: ["3", "3", "0", "-", "-", "-", "-", "-"],
         totalPoints: 6,
         goalDiff: 2,
         goalsAgainst: 5,

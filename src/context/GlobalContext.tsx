@@ -140,7 +140,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "6:55 PM",
             location: "Monarch Meadows",
-            score: "W 5 - 4",
+            score: "W 5-4",
             league: "Outdoor",
             goalScorers: ["Nate - 6'", "Tony - 10'", "Tyler - 26'", "Oli - 38'", "Tyler - 46'"],
             notes: "Reminder: We have a game scheduled for tomorrow as well."
@@ -151,9 +151,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "5:30 PM",
             location: "2323 S 900 E (Fairmont Park)",
-            score: "TBD",
+            score: "L 1-3",
             league: "Outdoor",
-            goalScorers: [""]
+            goalScorers: ["Nate - 14'"]
         },
         {
             date: "2025-03-28",
