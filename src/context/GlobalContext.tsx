@@ -156,16 +156,6 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: ["Nate - 14'"]
         },
         {
-            date: "2025-03-28",
-            opponent: "SSFC Thunder",
-            isHome: false,
-            time: "6:45 PM",
-            location: "Sport City (Indoor)",
-            score: "TBD",
-            league: "Indoor",
-            goalScorers: [""]
-        },
-        {
             date: "2025-03-29",
             opponent: "Impact",
             isHome: true,
