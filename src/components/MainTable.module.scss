@@ -35,17 +35,23 @@
     }
 }
 
-@media (max-width: 600px) {
-    .scrollIndicator {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 0;
-        height: calc(100% - 1rem);
-        width: 90px;
-        pointer-events: none;
-        background: linear-gradient(to left,
-            rgb(197, 196, 196),
-            rgba(255, 255, 255, 0));
-    }
+.dateContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+
+.monthName {
+    color: #555;
+}
+
+.dayNumber {
+    color: #222;
+    padding: 0 1px;
+}
+
+.dayName {
+    color: #555;
+    padding: 0 1px;
 }

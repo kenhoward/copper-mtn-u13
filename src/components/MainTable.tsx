@@ -1,8 +1,5 @@
 "use client";
 import { Match } from "./NextMatch";
-// utils
-import { formatDateLocal } from '../utils/dateFormatter';
-// styles
 import styles from "./MainTable.module.scss";
 
 interface MainTableProps {
@@ -11,14 +8,11 @@ interface MainTableProps {
     isPreviousMatchesPage?: boolean;
 }
 
-// TODO fix previous matches scroll
 const MainTable = ({
     matches,
     isMatchesPage,
     isPreviousMatchesPage,
 }: MainTableProps) => {
-    const hasNotes = matches.some((match) => match.notes);
-
     return (
         <div className={styles.tableWrapper}>
             <div className={styles.tableContainer}>
@@ -36,24 +30,45 @@ const MainTable = ({
                         </tr>
                     </thead>
                     <tbody>
-                        {matches.map((match, index) => (
+                        {matches.map((match, index) => {
+                            const dateObj = new Date(match.date);
+                            const monthName = dateObj.toLocaleDateString("en-US", {
+                            month: "short",
+                            });
+                            const dayNumber = dateObj.getDate();
+                            const dayName = dateObj.toLocaleDateString("en-US", {
+                            weekday: "short",
+                            });
+                            return (
                             <tr key={index}>
-                                <td>{formatDateLocal(match.date)}</td>
                                 <td>
-                                    {match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}
+                                <div className={styles.dateContainer}>
+                                    <div className={styles.dayName}>{dayName},</div>
+                                    <div className={styles.monthName}>{monthName}</div>
+                                    <div className={styles.dayNumber}>{dayNumber}</div>
+                                </div>
+                                </td>
+                                <td>
+                                {match.isHome
+                                    ? `v. ${match.opponent}`
+                                    : `@ ${match.opponent}`}
                                 </td>
                                 {!isPreviousMatchesPage && <td>{match.time}</td>}
-                                {!isPreviousMatchesPage && <td>{match.isHome ? "Blue" : "White"}</td>}
+                                {!isPreviousMatchesPage && (
+                                <td>{match.isHome ? "Blue" : "White"}</td>
+                                )}
                                 {!isPreviousMatchesPage && <td>{match.location}</td>}
                                 {!isPreviousMatchesPage && <td>{match.notes}</td>}
                                 {!isMatchesPage && <td>{match.score}</td>}
-                                {isPreviousMatchesPage && <td>{match.goalScorers?.join(" | ")}</td>}
+                                {isPreviousMatchesPage && (
+                                <td>{match.goalScorers?.join(" | ")}</td>
+                                )}
                             </tr>
-                        ))}
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
-            <div className={styles.scrollIndicator} />
         </div>
     );
 };

@@ -22,12 +22,18 @@ interface NextMatchProps {
 const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
     if (!matchData) return <p>No upcoming match available.</p>;
 
+    const dateObj = new Date(matchData.date);
+    const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
+    const dayNumber = dateObj.getDate();
+    const dayName = dateObj.toLocaleDateString("en-US", { weekday: "short" });
+
     return (
         <div className={styles.nextMatch}>
             <h2>Next Game</h2>
             <div className={styles.nextMatchDetails}>
                 <p>
-                    <i className="fa-regular fa-calendar"></i><b>Date:</b> {matchData.date}
+                    <i className="fa-regular fa-calendar"></i><b>Date:</b> 
+                    <span className={styles.dateContainer}>{dayName}, {monthName} {dayNumber}</span>
                 </p>
                 <p>
                     <i className="fa-solid fa-futbol"></i><b>Opponent:</b>{" "}

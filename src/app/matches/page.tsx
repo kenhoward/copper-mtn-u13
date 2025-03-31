@@ -1,13 +1,14 @@
 "use client";
 import NextMatch, { Match } from "@/components/NextMatch";
 import MainTable from "@/components/MainTable";
+import MainCard from "@/components/MainCard";
 import Link from "next/link";
 import { useGlobal } from "@/context/GlobalContext";
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
 import styles from "./Matches.module.scss";
 
 export default function MatchesPage() {
-    const { scheduleArr } = useGlobal();
+    const { scheduleArr, isMobile } = useGlobal();
 
     const allMatches: Match[] = [...scheduleArr].sort(
         (a, b) => getMatchEffectiveDate(a).getTime() - getMatchEffectiveDate(b).getTime()
@@ -28,11 +29,11 @@ export default function MatchesPage() {
                 <Link href="/matches/previous">View Previous Matches</Link>
             </div>
             {nextMatch && <NextMatch matchData={nextMatch} isMatchesPage />}
-            <span className={styles.scrollPrompt}>
-                Scroll right to see more info
-                <i className="fa-solid fa-arrow-right fa-beat-fade"></i>
-            </span>
-            <MainTable matches={tableMatches} isMatchesPage />
+            {isMobile ? (
+                <MainCard matches={tableMatches} />
+            ) : (
+                <MainTable matches={tableMatches} isMatchesPage />
+            )}
         </div>
     );
 }
