@@ -98,7 +98,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "4:25 PM",
             location: "Sport City (Indoor)",
-            score: "L 9-0",
+            score: "L 0-9",
             league: "Indoor",
             goalScorers: ["No Goals"]
         },
@@ -108,9 +108,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "3:45 PM",
             location: "Sport City (Indoor)",
-            score: "TBD",
+            score: "T 1-1",
             league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["Nate - 13'"]
         },
         {
             date: "2025-03-21",
@@ -118,9 +118,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "4:00 PM",
             location: "Sport City (Indoor)",
-            score: "TBD",
+            score: "W 5-0",
             league: "Indoor",
-            goalScorers: [""],
+            goalScorers: ["Landon - 19'", "Nate - 20'", "Tony - 23'", "Kaiser - 28'", "Kaiser - 32'"],
             notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
@@ -129,9 +129,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "6:40 PM",
             location: "Monarch Meadows",
-            score: "TBD",
+            score: "W 2-1",
             league: "Outdoor",
-            goalScorers: [""],
+            goalScorers: ["Nate - 14'", "Tony - 23'"],
             notes: "First outdoor match!"
         },
         {
@@ -140,30 +140,20 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "6:55 PM",
             location: "Monarch Meadows",
-            score: "TBD",
+            score: "W 5-4",
             league: "Outdoor",
-            goalScorers: [""],
+            goalScorers: ["Nate - 6'", "Tony - 10'", "Tyler - 26'", "Oli - 38'", "Tyler - 46'"],
             notes: "Reminder: We have a game scheduled for tomorrow as well."
         },
         {
-            date: "2025-04-25",
+            date: "2025-03-25",
             opponent: "Impact",
             isHome: false,
             time: "5:30 PM",
             location: "2323 S 900 E (Fairmont Park)",
-            score: "TBD",
+            score: "L 1-3",
             league: "Outdoor",
-            goalScorers: [""]
-        },
-        {
-            date: "2025-03-28",
-            opponent: "SSFC Thunder",
-            isHome: false,
-            time: "6:45 PM",
-            location: "Sport City (Indoor)",
-            score: "TBD",
-            league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["Nate - 14'"]
         },
         {
             date: "2025-03-29",
