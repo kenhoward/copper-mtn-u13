@@ -25,7 +25,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     const [isSticky, setIsSticky] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     // TODO probably ought to offload to some config
-    const magicIsMobileNumber = 600;
+    const magicIsMobileNumber = 768;
 
     // TODO fix sticky header issues
     // useEffect(() => {
@@ -173,6 +173,16 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             location: "Monarch Meadows Park",
             score: "TBD",
             league: "Outdoor",
+            goalScorers: [""]
+        },
+        {
+            date: "2025-03-31",
+            opponent: "SSFC Thunder",
+            isHome: false,
+            time: "6:45 PM",
+            location: "Sport City (Indoor)",
+            score: "TBD",
+            league: "Indoor",
             goalScorers: [""]
         },
         {
