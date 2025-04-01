@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { parseMatchDateTime } from "../utils/dateFormatter";
 import styles from "./NextMatch.module.scss";
 
 export interface Match {
@@ -22,7 +23,7 @@ interface NextMatchProps {
 const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
     if (!matchData) return <p>No upcoming match available.</p>;
 
-    const dateObj = new Date(matchData.date);
+    const dateObj = parseMatchDateTime(matchData.date, matchData.time);
     const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
     const dayNumber = dateObj.getDate();
     const dayName = dateObj.toLocaleDateString("en-US", { weekday: "short" });
@@ -32,8 +33,10 @@ const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
             <h2>Next Game</h2>
             <div className={styles.nextMatchDetails}>
                 <p>
-                    <i className="fa-regular fa-calendar"></i><b>Date:</b> 
-                    <span className={styles.dateContainer}>{dayName}, {monthName} {dayNumber}</span>
+                    <i className="fa-regular fa-calendar"></i><b>Date:</b>
+                    <span className={styles.dateContainer}>
+                        {dayName}, {monthName} {dayNumber}
+                    </span>
                 </p>
                 <p>
                     <i className="fa-solid fa-futbol"></i><b>Opponent:</b>{" "}
@@ -46,7 +49,7 @@ const NextMatch = ({ matchData, isMatchesPage }: NextMatchProps) => {
                     <i className="fa-solid fa-map-location-dot"></i><b>Location:</b> {matchData.location}
                 </p>
                 <p>
-                    <i className="fa-solid fa-shirt"></i><b>Jersey:</b> {matchData.isHome ? "Blue" : "White" }
+                    <i className="fa-solid fa-shirt"></i><b>Jersey:</b> {matchData.isHome ? "Blue" : "White"}
                 </p>
                 {matchData.notes && (
                     <p>
