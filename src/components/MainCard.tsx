@@ -1,5 +1,6 @@
 "use client";
 import { Match } from "./NextMatch";
+import { parseMatchDateTime } from "../utils/dateFormatter";
 import styles from "./MainCard.module.scss";
 
 interface MainCardProps {
@@ -21,12 +22,12 @@ interface CardProps {
 }
 
 const Card = ({ match }: CardProps) => {
-    const dateObj = new Date(match.date);
+    const dateObj = parseMatchDateTime(match.date, match.time);
     const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
     const dayNumber = dateObj.getDate();
     const dayName = dateObj.toLocaleDateString("en-US", { weekday: "short" });
-    const blueJersey = '#0984e3';
-    const whiteJersey = '#f5f6fa';
+    const blueJersey = "#0984e3";
+    const whiteJersey = "#f5f6fa";
 
     return (
         <div className={styles.matchCard}>
@@ -54,7 +55,14 @@ const Card = ({ match }: CardProps) => {
                     <div className={styles.jerseyColor}>
                         {match.isHome ? "BLUE" : "WHITE"}
                     </div>
-                    <i className="fa-solid fa-shirt" style={match.isHome ? { color: blueJersey, backgroundColor: '#c7ecee' } : { color: whiteJersey, backgroundColor: '#95a5a6' }}></i>
+                    <i
+                        className="fa-solid fa-shirt"
+                        style={
+                            match.isHome
+                                ? { color: blueJersey, backgroundColor: "#c7ecee" }
+                                : { color: whiteJersey, backgroundColor: "#95a5a6" }
+                        }
+                    ></i>
                 </div>
             </div>
         </div>
