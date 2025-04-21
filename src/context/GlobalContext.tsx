@@ -161,9 +161,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: true,
             time: "5:15 PM",
             location: "Monarch Meadows Park",
-            score: "TBD",
+            score: "L 3-4",
             league: "Outdoor",
-            goalScorers: [""]
+            goalScorers: ["No Data"]
         },
         {
             date: "2025-03-31",
@@ -171,9 +171,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "6:45 PM",
             location: "Sport City (Indoor)",
-            score: "TBD",
+            score: "L 3-4",
             league: "Indoor",
-            goalScorers: [""]
+            goalScorers: ["No Data"]
         },
         {
             date: "2025-04-12",
@@ -181,9 +181,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "2:25 PM",
             location: "Rowland Hall - Soccer Fields",
-            score: "TBD",
+            score: "W 2-0",
             league: "Outdoor",
-            goalScorers: [""],
+            goalScorers: ["No Data"],
             notes: "Near East High & UofU"
         },
         {
@@ -192,15 +192,15 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             isHome: false,
             time: "11:45 AM",
             location: "Majestic Elementary - West Jordan",
-            score: "TBD",
+            score: "W 2-1",
             league: "Outdoor",
-            goalScorers: [""]
+            goalScorers: ["Tony x 2"]
         },
         {
             date: "2025-04-26",
             opponent: "City SC Elite JP",
             isHome: false,
-            time: "9:55 PM",
+            time: "10:15 AM",
             location: "Rowland Hall - Soccer Fields",
             score: "TBD",
             league: "Outdoor",
@@ -218,7 +218,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "2025-05-25",
+            date: "2025-05-07",
             opponent: "City SC Elite JP",
             isHome: true,
             time: "5:30 PM",
@@ -228,7 +228,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             goalScorers: [""]
         },
         {
-            date: "2025-05-07",
+            date: "2025-05-17",
             opponent: "River Mountain",
             isHome: true,
             time: "3:50 PM",
