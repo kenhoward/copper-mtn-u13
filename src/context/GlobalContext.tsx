@@ -211,7 +211,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
             date: "2025-05-03",
             opponent: "Utah Glory",
             isHome: false,
-            time: "11:30 aM",
+            time: "11:30 AM",
             location: "Jordan Ridge Park",
             score: "TBD",
             league: "Outdoor",
