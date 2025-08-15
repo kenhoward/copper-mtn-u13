@@ -35,13 +35,11 @@
     padding: 0.75rem;
     background-color: var(--dark-green);
     color: var(--light-green);
-    opacity: 0.9;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
-    // cursor: pointer;
+    cursor: pointer;
     pointer-events: none;
-    opacity: 0.5;
     margin-bottom: 1rem;
     transition: background-color 0.2s;
 

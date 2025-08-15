@@ -2,6 +2,7 @@
 "use client";
 import Link from 'next/link';
 // context
+import { useAuth } from '@/context/AuthContext';
 import { useGlobal } from '../context/GlobalContext';
 // components
 import Logo from './Logo';
@@ -11,6 +12,7 @@ import styles from './Navbar.module.scss';
 
 const Navbar = () => {
     const { isSticky } = useGlobal();
+    const { currentUser, logout } = useAuth();
 
     return (
         <div className={styles.navBarContainer}>
@@ -18,6 +20,21 @@ const Navbar = () => {
                 <div className={styles.topSectionContainer}>
                     <div className={styles.linksContainer}>
                         <Link href="/admin">Admin</Link>
+                        {currentUser ? (
+                            <span
+                                className={styles.linkLike}
+                                onClick={logout}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter" || e.key === " ") logout();
+                                }}
+                            >
+                                <span className={styles.logout}>Log out</span>
+                            </span>
+                        ) : (
+                            <Link href="/admin">Log in</Link>
+                        )}
                     </div>
                 </div>
             )}
