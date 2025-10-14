@@ -28,6 +28,10 @@ export default function AddMatchForm() {
     const [ourScore, setOurScore] = useState<string>("");
     const [opponentScore, setOpponentScore] = useState<string>("");
 
+    // NEW: goal scorers modeled in UI as rows, then serialized to string[]
+    const [goalRows, setGoalRows] = useState<{ name: string; minute: string }[]>([]);
+    const [noGoalData, setNoGoalData] = useState(false);
+
     const [notes, setNotes] = useState("");
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -49,6 +53,21 @@ export default function AddMatchForm() {
         return d.getTime() < today.getTime();
     }, [date]);
 
+    // Keep goal rows in sync with ourScore (only for past matches & when not "No Data")
+    useEffect(() => {
+        if (!isPast || noGoalData) return;
+        const n = Math.max(0, Number.isFinite(Number(ourScore)) ? Number(ourScore) : 0);
+        setGoalRows((prev) => {
+            const next = [...prev];
+            if (n > next.length) {
+                while (next.length < n) next.push({ name: "", minute: "" });
+            } else if (n < next.length) {
+                next.length = n;
+            }
+            return next;
+        });
+    }, [isPast, ourScore, noGoalData]);
+
     // Basic required fields
     const baseOk =
         /^\d{4}-\d{2}-\d{2}$/.test(date) &&
@@ -66,7 +85,22 @@ export default function AddMatchForm() {
         return Number.isInteger(a) && Number.isInteger(b) && a >= 0 && b >= 0;
     }, [isPast, ourScore, opponentScore]);
 
-    const requiredOk = baseOk && scoresOk;
+    // Goal rows validation (only if past, ourScore > 0, and NOT "No Data")
+    const goalsOk = useMemo(() => {
+        if (!isPast) return true;
+        const a = Number(ourScore);
+        if (!Number.isInteger(a) || a < 0) return false;
+        if (a === 0) return true; // will save ["No Goals"]
+        if (noGoalData) return true; // will save ["No Data"]
+        // ensure we have exactly 'a' rows and each has name + minute (0..120)
+        if (goalRows.length !== a) return false;
+        return goalRows.every((g) => {
+            const minuteNum = Number(g.minute);
+            return g.name.trim().length > 0 && Number.isInteger(minuteNum) && minuteNum >= 0 && minuteNum <= 120;
+        });
+    }, [isPast, ourScore, noGoalData, goalRows]);
+
+    const requiredOk = baseOk && scoresOk && goalsOk;
 
     // derive outcome + legacy score string (for compatibility)
     const derived = useMemo(() => {
@@ -91,6 +125,8 @@ export default function AddMatchForm() {
         setLeague("Indoor");
         setOurScore("");
         setOpponentScore("");
+        setGoalRows([]);
+        setNoGoalData(false);
         setNotes("");
     };
 
@@ -108,6 +144,18 @@ export default function AddMatchForm() {
         const a = isPast ? Number(ourScore) : null;
         const b = isPast ? Number(opponentScore) : null;
 
+        // build goalScorers array (only for past games)
+        let goalScorers: string[] | null = null;
+        if (isPast) {
+            if ((a ?? 0) === 0) {
+                goalScorers = ["No Goals"];
+            } else if (noGoalData) {
+                goalScorers = ["No Data"];
+            } else if (goalRows.length > 0) {
+                goalScorers = goalRows.map((g) => `${g.name.trim()} - ${Number(g.minute)}'`);
+            }
+        }
+
         const payload: any = {
             date: date.trim(),
             opponent: opponent.trim(),
@@ -122,6 +170,9 @@ export default function AddMatchForm() {
             notes: notes.trim() || null,
             _createdAt: serverTimestamp(),
         };
+
+        // only include goalScorers if determined (avoid undefined)
+        if (goalScorers) payload.goalScorers = goalScorers;
 
         try {
             setSubmitting(true);
@@ -147,13 +198,7 @@ export default function AddMatchForm() {
             <div className={styles.twoCol}>
                 <label className={styles.label}>
                     <span>Date*</span>
-                    <input
-                        type="date"
-                        className={styles.input}
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        required
-                    />
+                    <input type="date" className={styles.input} value={date} onChange={(e) => setDate(e.target.value)} required />
                 </label>
 
                 <label className={styles.label}>
@@ -172,35 +217,19 @@ export default function AddMatchForm() {
             <div className={styles.twoCol}>
                 <label className={styles.label}>
                     <span>Opponent*</span>
-                    <input
-                        type="text"
-                        className={styles.input}
-                        value={opponent}
-                        onChange={(e) => setOpponent(e.target.value)}
-                        required
-                    />
+                    <input type="text" className={styles.input} value={opponent} onChange={(e) => setOpponent(e.target.value)} required />
                 </label>
 
                 <label className={styles.label}>
                     <span>Location*</span>
-                    <input
-                        type="text"
-                        className={styles.input}
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        required
-                    />
+                    <input type="text" className={styles.input} value={location} onChange={(e) => setLocation(e.target.value)} required />
                 </label>
             </div>
 
             <div className={styles.twoCol}>
                 <label className={styles.label}>
                     <span>Home / Away*</span>
-                    <select
-                        className={styles.input}
-                        value={isHome ? "home" : "away"}
-                        onChange={(e) => setIsHome(e.target.value === "home")}
-                    >
+                    <select className={styles.input} value={isHome ? "home" : "away"} onChange={(e) => setIsHome(e.target.value === "home")}>
                         <option value="home">Home</option>
                         <option value="away">Away</option>
                     </select>
@@ -208,11 +237,7 @@ export default function AddMatchForm() {
 
                 <label className={styles.label}>
                     <span>League*</span>
-                    <select
-                        className={styles.input}
-                        value={league}
-                        onChange={(e) => setLeague(e.target.value as League)}
-                    >
+                    <select className={styles.input} value={league} onChange={(e) => setLeague(e.target.value as League)}>
                         <option value="Indoor">Indoor</option>
                         <option value="Outdoor">Outdoor</option>
                     </select>
@@ -221,49 +246,111 @@ export default function AddMatchForm() {
 
             {/* Scores only if date is in the past */}
             {isPast ? (
-                <div className={styles.twoCol}>
-                    <label className={styles.label}>
-                        <span>Our Score*</span>
-                        <input
-                            type="number"
-                            inputMode="numeric"
-                            className={styles.input}
-                            min={0}
-                            step={1}
-                            value={ourScore}
-                            onChange={(e) => setOurScore(e.target.value)}
-                            required
-                        />
-                    </label>
+                <>
+                    <div className={styles.twoCol}>
+                        <label className={styles.label}>
+                            <span>Our Score*</span>
+                            <input
+                                type="number"
+                                inputMode="numeric"
+                                className={styles.input}
+                                min={0}
+                                step={1}
+                                value={ourScore}
+                                onChange={(e) => setOurScore(e.target.value)}
+                                required
+                            />
+                        </label>
 
-                    <label className={styles.label}>
-                        <span>Opponent Score*</span>
-                        <input
-                            type="number"
-                            inputMode="numeric"
-                            className={styles.input}
-                            min={0}
-                            step={1}
-                            value={opponentScore}
-                            onChange={(e) => setOpponentScore(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
+                        <label className={styles.label}>
+                            <span>Opponent Score*</span>
+                            <input
+                                type="number"
+                                inputMode="numeric"
+                                className={styles.input}
+                                min={0}
+                                step={1}
+                                value={opponentScore}
+                                onChange={(e) => setOpponentScore(e.target.value)}
+                                required
+                            />
+                        </label>
+                    </div>
+
+                    {Number(ourScore) === 0 ? (
+                        <div className={styles.infoBanner}>Note: <strong>“No Goals”</strong> will be recorded</div>
+                    ) : (
+                        <>
+                            <label className={styles.inlineCheck}>
+                                <input
+                                    type="checkbox"
+                                    className={styles.noDataCheckbox}
+                                    checked={noGoalData}
+                                    onChange={(e) => setNoGoalData(e.target.checked)}
+                                />
+                                <span style={{ marginLeft: 8 }}>No Available Data</span>
+                            </label>
+
+                            {!noGoalData && Number(ourScore) > 0 && (
+                                <div>
+                                    <div className={styles.label} style={{ marginBottom: "0.25rem" }}>
+                                        <span>Goal Scorers ({goalRows.length} goal{goalRows.length === 1 ? "" : "s"})</span>
+                                    </div>
+                                    {goalRows.map((row, idx) => (
+                                        <div key={idx} className={styles.twoCol} style={{ marginBottom: "0.5rem" }}>
+                                            <input
+                                                type="text"
+                                                className={styles.input}
+                                                placeholder={`Goal ${idx + 1}`}
+                                                value={row.name}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setGoalRows((prev) => {
+                                                        const next = [...prev];
+                                                        next[idx] = { ...next[idx], name: v };
+                                                        return next;
+                                                    });
+                                                }}
+                                                required
+                                            />
+                                            <input
+                                                type="number"
+                                                inputMode="numeric"
+                                                className={styles.input}
+                                                placeholder="Minute"
+                                                min={0}
+                                                max={120}
+                                                step={1}
+                                                value={row.minute}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setGoalRows((prev) => {
+                                                        const next = [...prev];
+                                                        next[idx] = { ...next[idx], minute: v };
+                                                        return next;
+                                                    });
+                                                }}
+                                                required
+                                            />
+                                        </div>
+                                    ))}
+                                    <div className={styles.infoBanner}>
+                                        Rows match <strong>Our Score</strong>. Adjust “Our Score” to add/remove rows.
+                                    </div>
+                                </div>
+                            )}
+                        </>
+                    )}
+                </>
             ) : (
                 <div className={styles.infoBanner}>
-                    Date is today or in the future — result and scores will be saved as <strong>TBD</strong>.
+                    Date is in the future — result and scores will be saved as <strong>TBD</strong>.
                 </div>
             )}
 
             <label className={styles.label}>
                 <span>Notes</span>
-                <textarea
-                    className={styles.textarea}
-                    rows={3}
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                />
+                <textarea className={styles.textarea} rows={3} value={notes} onChange={(e) => setNotes(e.target.value)} />
             </label>
 
             {error && <div className={styles.errorBanner}>{error}</div>}

@@ -81,6 +81,18 @@
 //     }
 // }
 
+.inlineCheck {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.noDataCheckbox {
+    cursor: pointer;
+}
+
 .cardForm {
     max-width: 700px;
     margin: 0 auto;
