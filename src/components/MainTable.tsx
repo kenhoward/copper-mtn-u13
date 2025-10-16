@@ -1,6 +1,6 @@
 "use client";
-import { Match } from "./NextMatch";
 import { getMatchEffectiveDate } from '@/utils/dateFormatter';
+import type { Match } from "@/types/match";
 import styles from "./MainTable.module.scss";
 
 interface MainTableProps {

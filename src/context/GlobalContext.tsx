@@ -2,22 +2,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { db } from "@/firebase";
 import { collection, onSnapshot, QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
-
-export interface Match {
-    date: string;
-    opponent: string;
-    isHome: boolean;
-    time: string;
-    location: string;
-    score: string;
-    league: "Indoor" | "Outdoor";
-    goalScorers?: string[];
-    notes?: string | null;
-    ourScore?: number | null;
-    opponentScore?: number | null;
-    outcome?: "W" | "L" | "T" | null;
-    id?: string;
-}
+import type { Match } from "@/types/match";
 
 interface GlobalContextType {
     isSticky: boolean;

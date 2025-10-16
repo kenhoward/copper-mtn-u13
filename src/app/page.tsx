@@ -1,8 +1,9 @@
 "use client";
-import NextMatch, { Match } from "@/components/NextMatch";
+import NextMatch from "@/components/NextMatch";
 import { useGlobal } from "@/context/GlobalContext";
 import { useAuth } from "@/context/AuthContext";
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
+import type { Match } from "@/types/match";
 import styles from "./Landing.module.scss";
 
 export default function Home() {
