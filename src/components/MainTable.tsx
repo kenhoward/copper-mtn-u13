@@ -1,5 +1,6 @@
 "use client";
-import { Match } from "./NextMatch";
+import { getMatchEffectiveDate } from '@/utils/dateFormatter';
+import type { Match } from "@/types/match";
 import styles from "./MainTable.module.scss";
 
 interface MainTableProps {
@@ -31,7 +32,7 @@ const MainTable = ({
                     </thead>
                     <tbody>
                         {matches.map((match, index) => {
-                            const dateObj = new Date(match.date);
+                            const dateObj = getMatchEffectiveDate(match);
                             const monthName = dateObj.toLocaleDateString("en-US", {
                             month: "short",
                             });

@@ -1,19 +1,8 @@
 "use client";
 import Link from "next/link";
 import { parseMatchDateTime } from "../utils/dateFormatter";
+import type { Match } from "@/types/match";
 import styles from "./NextMatch.module.scss";
-
-export interface Match {
-    date: string;
-    opponent: string;
-    isHome: boolean;
-    time: string;
-    location: string;
-    score: string;
-    goalScorers?: string[];
-    notes?: string;
-    league: "Indoor" | "Outdoor";
-}
 
 interface NextMatchProps {
     matchData?: Match;

@@ -1,12 +1,13 @@
 "use client";
 // components
 import MainTable from "@/components/MainTable";
-import { Match } from "@/components/NextMatch";
 import Link from "next/link";
 // context
 import { useGlobal } from "@/context/GlobalContext";
 // utils
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
+// types
+import type { Match } from "@/types/match";
 // styles
 import styles from "./PreviousMatches.module.scss";
 

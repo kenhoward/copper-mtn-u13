@@ -1,10 +1,11 @@
 "use client";
-import NextMatch, { Match } from "@/components/NextMatch";
+import NextMatch from "@/components/NextMatch";
 import MainTable from "@/components/MainTable";
 import MainCard from "@/components/MainCard";
 import Link from "next/link";
 import { useGlobal } from "@/context/GlobalContext";
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
+import type { Match } from "@/types/match";
 import styles from "./Matches.module.scss";
 
 export default function MatchesPage() {

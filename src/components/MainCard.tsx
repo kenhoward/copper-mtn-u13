@@ -1,6 +1,6 @@
 "use client";
-import { Match } from "./NextMatch";
 import { parseMatchDateTime } from "../utils/dateFormatter";
+import type { Match } from "@/types/match";
 import styles from "./MainCard.module.scss";
 
 interface MainCardProps {
