@@ -19,7 +19,7 @@ const Navbar = () => {
             {!isSticky && (
                 <div className={styles.topSectionContainer}>
                     <div className={styles.linksContainer}>
-                        <Link href="/admin">Admin</Link>
+                        {currentUser && <Link href="/admin">Admin</Link>}
                         {currentUser ? (
                             <span
                                 className={styles.linkLike}
