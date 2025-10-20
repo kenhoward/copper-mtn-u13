@@ -5,7 +5,7 @@ export interface Match {
     time: string;
     location: string;
     score: string;
-    league: "Indoor" | "Outdoor";
+    league: "Indoor" | "Outdoor" | "Tournament";
     goalScorers?: string[];
     notes?: string | null;
     ourScore?: number | null;
