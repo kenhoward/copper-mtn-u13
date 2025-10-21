@@ -245,7 +245,6 @@ export default function AddMatchForm() {
                 </label>
             </div>
 
-            {/* Scores only if date is in the past */}
             {isPast ? (
                 <>
                     <div className={styles.twoCol}>
