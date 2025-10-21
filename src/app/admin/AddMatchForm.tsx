@@ -4,7 +4,7 @@ import { db } from "@/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import styles from "@/app/admin/Admin.module.scss";
 
-type League = "Indoor" | "Outdoor";
+type League = "Indoor" | "Outdoor" | "Tournament";
 type Outcome = "W" | "L" | "T";
 
 function toAmPm(hhmm: string): string {
@@ -74,7 +74,7 @@ export default function AddMatchForm() {
         opponent.trim().length > 0 &&
         location.trim().length > 0 &&
         time.trim().length > 0 &&
-        (league === "Indoor" || league === "Outdoor");
+        (league === "Indoor" || league === "Outdoor" || league === 'Tournament');
 
     // Score validation only if past
     const scoresOk = useMemo(() => {
@@ -240,11 +240,11 @@ export default function AddMatchForm() {
                     <select className={styles.input} value={league} onChange={(e) => setLeague(e.target.value as League)}>
                         <option value="Indoor">Indoor</option>
                         <option value="Outdoor">Outdoor</option>
+                        <option value="Tournament">Tournament</option>
                     </select>
                 </label>
             </div>
 
-            {/* Scores only if date is in the past */}
             {isPast ? (
                 <>
                     <div className={styles.twoCol}>
