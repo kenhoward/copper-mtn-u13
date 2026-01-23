@@ -32,6 +32,7 @@ const MainTable = ({ matches, isMatchesPage, isPreviousMatchesPage }: MainTableP
                     <tbody>
                         {matches.map((match, index) => {
                             const dateObj = getMatchEffectiveDate(match);
+                            const yearNumber = dateObj.getFullYear();
                             const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
                             const dayNumber = dateObj.getDate();
                             const dayName = dateObj.toLocaleDateString("en-US", { weekday: "short" });
@@ -44,7 +45,8 @@ const MainTable = ({ matches, isMatchesPage, isPreviousMatchesPage }: MainTableP
                                         <div className={styles.dateContainer}>
                                             <div className={styles.dayName}>{dayName},</div>
                                             <div className={styles.monthName}>{monthName}</div>
-                                            <div className={styles.dayNumber}>{dayNumber}</div>
+                                            <div className={styles.dayNumber}>{dayNumber},</div>
+                                            <div className={styles.yearNumber}>{yearNumber}</div>
                                         </div>
                                     </td>
                                     <td>{match.isHome ? `v. ${match.opponent}` : `@ ${match.opponent}`}</td>

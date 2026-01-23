@@ -42,16 +42,10 @@
     gap: 2px;
 }
 
-.monthName {
-    color: #555;
-}
-
-.dayNumber {
-    color: #222;
-    padding: 0 1px;
-}
-
-.dayName {
+.monthName,
+.dayNumber,
+.dayName,
+.yearNumber {
     color: #555;
     padding: 0 1px;
 }
