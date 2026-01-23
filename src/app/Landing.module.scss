@@ -21,3 +21,36 @@
         max-height: 50em;
     }
 }
+
+.statusCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--off-white);
+    opacity: 0.95;
+    padding: 45px 90px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    margin-top: 1rem;
+}
+
+.statusText {
+    color: var(--dark-grey);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid rgba(52, 73, 94, 0.25);
+    border-top-color: var(--dark-grey);
+    animation: landingSpin 0.8s linear infinite;
+}
+
+@keyframes landingSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
