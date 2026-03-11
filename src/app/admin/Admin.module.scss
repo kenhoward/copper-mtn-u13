@@ -202,6 +202,65 @@
     }
 }
 
+.noTopMargin {
+    margin-top: 0;
+}
+
+.formActionsRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.formActionsRight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.deleteButton {
+    border: 1px solid #b42318;
+    background: rgba(180, 35, 24, 0.08);
+    color: #7a271a;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+
+    &:hover {
+        background: rgba(180, 35, 24, 0.14);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.confirmDeleteButton {
+    border: 1px solid #b42318;
+    background: #b42318;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: opacity 0.18s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
 .subtleText {
     margin-top: -0.75rem;
     margin-bottom: 1rem;

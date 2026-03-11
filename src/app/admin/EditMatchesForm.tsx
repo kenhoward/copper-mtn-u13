@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { deleteDoc, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useGlobal } from "@/context/GlobalContext";
 import { getMatchEffectiveDate } from "@/utils/dateFormatter";
@@ -118,6 +118,8 @@ export default function EditMatchesForm() {
     const [notes, setNotes] = useState("");
 
     const [submitting, setSubmitting] = useState(false);
+    const [deleting, setDeleting] = useState(false);
+    const [deleteConfirming, setDeleteConfirming] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
 
@@ -184,6 +186,10 @@ export default function EditMatchesForm() {
     }, [success]);
 
     useEffect(() => {
+        setDeleteConfirming(false);
+    }, [bucket, selectedMatchId]);
+
+    useEffect(() => {
         if (bucket !== "past" || noGoalData) return;
         const parsed = Number(ourScore);
         const goalCount = Number.isInteger(parsed) && parsed > 0 ? parsed : 0;
@@ -248,9 +254,11 @@ export default function EditMatchesForm() {
     }, [bucket, ourScore, opponentScore]);
 
     const isValid = Boolean(selectedMatch?.id) && baseFieldsValid && upcomingDateValid && scoresValid && goalsValid;
+    const isBusy = submitting || deleting;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setDeleteConfirming(false);
         setError(null);
         setSuccess(null);
 
@@ -303,9 +311,42 @@ export default function EditMatchesForm() {
         }
     };
 
+    const handleDelete = async () => {
+        setError(null);
+        setSuccess(null);
+
+        if (!selectedMatch?.id) {
+            setError("Select a match to delete.");
+            return;
+        }
+
+        if (!deleteConfirming) {
+            setDeleteConfirming(true);
+            return;
+        }
+
+        try {
+            setDeleting(true);
+            const deletedLabel = selectedMatch.opponent;
+            await deleteDoc(doc(db, "schedule", selectedMatch.id));
+            setSuccess(`Deleted ${deletedLabel}.`);
+            setDeleteConfirming(false);
+        } catch (err: any) {
+            console.error("Error deleting match:", err?.code, err?.message);
+            setError(
+                err?.code === "permission-denied"
+                    ? "Permission denied. Check Firestore rules or your login state."
+                    : `Could not delete the match. (${err?.code || "unknown"})`
+            );
+        } finally {
+            setDeleting(false);
+        }
+    };
+
     const handleReloadSelected = () => {
         if (!selectedMatch) return;
         hydrateFromMatch(selectedMatch);
+        setDeleteConfirming(false);
         setError(null);
         setSuccess(null);
     };
@@ -363,7 +404,7 @@ export default function EditMatchesForm() {
                         </div>
                     )}
 
-                    <fieldset className={styles.fieldSet} disabled={!selectedMatch || submitting}>
+                    <fieldset className={styles.fieldSet} disabled={!selectedMatch || isBusy}>
                         <div className={styles.twoCol}>
                             <label className={styles.label}>
                                 <span>Date*</span>
@@ -565,18 +606,42 @@ export default function EditMatchesForm() {
             {error && <div className={styles.errorBanner}>{error}</div>}
             {success && <div className={styles.successBanner}>{success}</div>}
 
-            <button type="submit" className={styles.submitButton} disabled={!isValid || submitting || noMatchesInBucket}>
+            <button type="submit" className={styles.submitButton} disabled={!isValid || isBusy || noMatchesInBucket}>
                 {submitting ? "Saving..." : "Save Changes"}
             </button>
 
-            <button
-                type="button"
-                className={styles.clearButton}
-                onClick={handleReloadSelected}
-                disabled={!selectedMatch || submitting}
-            >
-                Reload Selected Match
-            </button>
+            <div className={styles.formActionsRow}>
+                <button
+                    type="button"
+                    className={`${styles.clearButton} ${styles.noTopMargin}`}
+                    onClick={handleReloadSelected}
+                    disabled={!selectedMatch || isBusy}
+                >
+                    Reload Selected Match
+                </button>
+
+                <div className={styles.formActionsRight}>
+                    {deleteConfirming && (
+                        <button
+                            type="button"
+                            className={`${styles.clearButton} ${styles.noTopMargin}`}
+                            onClick={() => setDeleteConfirming(false)}
+                            disabled={isBusy}
+                        >
+                            Cancel
+                        </button>
+                    )}
+
+                    <button
+                        type="button"
+                        className={deleteConfirming ? styles.confirmDeleteButton : styles.deleteButton}
+                        onClick={handleDelete}
+                        disabled={!selectedMatch || isBusy || noMatchesInBucket}
+                    >
+                        {deleting ? "Deleting..." : deleteConfirming ? "Confirm Delete" : "Delete Match"}
+                    </button>
+                </div>
+            </div>
         </form>
     );
 }
