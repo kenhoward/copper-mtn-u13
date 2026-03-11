@@ -3,6 +3,7 @@ import React from "react";
 import { useAuth } from "@/context/AuthContext";
 import LoginForm from "./LoginForm";
 import AddMatchForm from "./AddMatchForm";
+import EditMatchesForm from "./EditMatchesForm";
 import styles from "./Admin.module.scss";
 
 export default function AdminPage() {
@@ -15,7 +16,7 @@ export default function AdminPage() {
             ) : (
                 <div className={styles.grid}>
                     <AddMatchForm />
-                    {/* Future: <EditMatchesCard /> <BulkImportCard /> etc. */}
+                    <EditMatchesForm />
                 </div>
             )}
         </div>
