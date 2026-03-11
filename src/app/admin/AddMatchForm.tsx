@@ -2,19 +2,11 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { db } from "@/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { toAmPm } from "@/utils/timeFormatter";
 import styles from "@/app/admin/Admin.module.scss";
 
 type League = "Indoor" | "Outdoor" | "Tournament";
 type Outcome = "W" | "L" | "T";
-
-function toAmPm(hhmm: string): string {
-    const [hStr, mStr] = hhmm.split(":");
-    if (!hStr || !mStr) return hhmm;
-    let h = parseInt(hStr, 10);
-    const ampm = h >= 12 ? "PM" : "AM";
-    h = h % 12 || 12;
-    return `${h}:${mStr} ${ampm}`;
-}
 
 export default function AddMatchForm() {
     const [date, setDate] = useState("");
