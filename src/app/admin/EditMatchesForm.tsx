@@ -1,5 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import type { DocumentData, UpdateData } from "firebase/firestore";
 import { deleteDoc, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useGlobal } from "@/context/GlobalContext";
@@ -272,7 +273,7 @@ export default function EditMatchesForm() {
             return;
         }
 
-        const payload: Record<string, unknown> = {
+        const payload: UpdateData<DocumentData> = {
             date: date.trim(),
             time: toAmPm(time.trim()),
             opponent: opponent.trim(),
